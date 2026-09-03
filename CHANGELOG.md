@@ -3,6 +3,20 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/)
 et le versionnage sémantique.
 
+## [1.0.1] — 2026-09-03
+
+Corrections issues d'une revue des retours clients du plugin dont celui-ci s'inspire.
+
+### Corrigé
+
+- **Aperçu et envoi de test des e-mails.** WooCommerce rend les e-mails depuis l'écran de réglages sans passer par leur déclenchement : les gabarits recevaient alors une déclaration nulle et l'aperçu échouait. Les deux e-mails s'appuient désormais sur une déclaration d'exemple construite à partir de la commande de démonstration de WooCommerce.
+- **Recherche de commande.** Lorsque le numéro saisi ne correspondait à aucune commande, une commande voisine appartenant à la même adresse e-mail pouvait être renvoyée à sa place. La recherche renvoie désormais un résultat vide.
+
+### Ajouté
+
+- Section suggérée pour la politique de confidentialité, injectée dans Réglages → Confidentialité, listant les données conservées et leur durée selon la configuration du site.
+- Banc d'essai de non-régression sur l'aperçu des e-mails : les accesseurs vérifiés sont déduits des gabarits eux-mêmes.
+
 ## [1.0.0] — 2026-09-03
 
 Première version publique.

@@ -96,6 +96,23 @@ class Acknowledgement extends \WC_Email {
 	}
 
 	/**
+	 * Déclaration à rendre : celle en cours d'envoi, ou un exemple.
+	 *
+	 * WooCommerce rend les e-mails dans l'aperçu des réglages et dans l'envoi
+	 * de test sans passer par trigger(). Sans ce repli, le gabarit recevrait
+	 * null et l'aperçu échouerait.
+	 *
+	 * @return Declaration
+	 */
+	private function resolve_declaration() {
+		if ( $this->declaration instanceof Declaration ) {
+			return $this->declaration;
+		}
+
+		return Declaration::sample( $this->object instanceof \WC_Order ? $this->object : null );
+	}
+
+	/**
 	 * Contenu HTML.
 	 *
 	 * @return string
@@ -104,7 +121,7 @@ class Acknowledgement extends \WC_Email {
 		return wc_get_template_html(
 			$this->template_html,
 			array(
-				'declaration'   => $this->declaration,
+				'declaration'   => $this->resolve_declaration(),
 				'email_heading' => $this->get_heading(),
 				'sent_to_admin' => false,
 				'plain_text'    => false,
@@ -124,7 +141,7 @@ class Acknowledgement extends \WC_Email {
 		return wc_get_template_html(
 			$this->template_plain,
 			array(
-				'declaration'   => $this->declaration,
+				'declaration'   => $this->resolve_declaration(),
 				'email_heading' => $this->get_heading(),
 				'sent_to_admin' => false,
 				'plain_text'    => true,

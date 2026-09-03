@@ -217,6 +217,68 @@ check( 'Liste d\'identifiants normalisée', array( 12, 34, 56 ), Settings::sanit
 check( 'Choix de liste invalide replacé par défaut', 'completed', Settings::sanitize( 'jamais', $schema['period_start'] ) );
 check( 'Statuts inconnus filtrés', array( 'processing' ), Settings::sanitize( array( 'processing', 'inexistant', 'cancelled' ), $schema['allowed_statuses'] ) );
 
+// --- Aperçu des e-mails ---------------------------------------------------.
+//
+// WooCommerce rend les e-mails dans l'écran de réglages et dans l'envoi de test
+// sans passer par trigger() : les gabarits reçoivent alors une déclaration
+// fictive. On vérifie que tous les accesseurs réellement appelés par les
+// gabarits d'e-mail répondent sur cet exemplaire — la liste est déduite des
+// gabarits, jamais écrite à la main.
+
+$sample = Declaration::sample( $recent );
+
+check( 'L\'exemple d\'aperçu porte une référence', true, '' !== $sample->get_reference() );
+check( 'L\'exemple d\'aperçu reprend les articles de la commande', 2, count( $sample->get_items() ) );
+check( 'L\'exemple d\'aperçu porte un contenu de déclaration', true, strlen( (string) $sample->get( 'statement' ) ) > 100 );
+
+$orphan = Declaration::sample( null );
+check( 'Sans commande, l\'exemple reste exploitable', 1, count( $orphan->get_items() ) );
+check( 'Sans commande, le contenu reste renseigné', true, '' !== (string) $orphan->get( 'statement' ) );
+
+$templates = array(
+	RET10G_DIR . 'templates/emails/ret10g-acknowledgement.php',
+	RET10G_DIR . 'templates/emails/plain/ret10g-acknowledgement.php',
+	RET10G_DIR . 'templates/emails/ret10g-merchant.php',
+	RET10G_DIR . 'templates/emails/plain/ret10g-merchant.php',
+);
+
+$calls = array();
+
+foreach ( $templates as $template ) {
+	$source = (string) file_get_contents( $template );
+
+	preg_match_all( "/\\\$declaration->(\\w+)\\(\\s*(?:'([^']*)')?/", $source, $matches, PREG_SET_ORDER );
+
+	foreach ( $matches as $match ) {
+		$calls[ $match[1] . '|' . ( $match[2] ?? '' ) ] = array( $match[1], $match[2] ?? null );
+	}
+}
+
+check( 'Des appels ont bien été relevés dans les gabarits', true, count( $calls ) >= 8 );
+
+foreach ( array( $sample, $orphan ) as $index => $subject ) {
+	$label = 0 === $index ? 'avec commande' : 'sans commande';
+
+	foreach ( $calls as $call ) {
+		list( $method, $argument ) = $call;
+
+		// Ce qui casse l'aperçu WooCommerce, c'est l'erreur fatale, pas une
+		// valeur nulle : les gabarits gardent déjà les retours nullables.
+		try {
+			$argument === null ? $subject->{$method}() : $subject->{$method}( $argument );
+			$ok = true;
+		} catch ( Throwable $e ) {
+			$ok = false;
+		}
+
+		check(
+			sprintf( 'Aperçu %s : $declaration->%s(%s) ne lève rien', $label, $method, $argument ? "'" . $argument . "'" : '' ),
+			true,
+			$ok
+		);
+	}
+}
+
 // --- Résultat -------------------------------------------------------------.
 
 echo sprintf( "%d assertions vérifiées.\n", $passed );

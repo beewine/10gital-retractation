@@ -4,14 +4,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.0\n"
-"Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/issues\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/"
+"issues\n"
+"POT-Creation-Date: 2026-09-03 20:08+0200\n"
 "PO-Revision-Date: 2026-09-03 00:00+0000\n"
 "Last-Translator: 10gital <contact@10gital.fr>\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: 10gital-retractation\n"
 
@@ -202,16 +204,32 @@ msgid "Rétractation — réglages"
 msgstr "Withdrawal — settings"
 
 #: includes/Admin/SettingsPage.php:116
-msgid "Aucune page de rétractation n'est configurée. Créez une page contenant le code court [retractation], puis sélectionnez-la ci-dessous."
-msgstr "No withdrawal page is configured. Create a page containing the [retractation] shortcode, then select it below."
+msgid ""
+"Aucune page de rétractation n'est configurée. Créez une page contenant le "
+"code court [retractation], puis sélectionnez-la ci-dessous."
+msgstr ""
+"No withdrawal page is configured. Create a page containing the "
+"[retractation] shortcode, then select it below."
 
 #: includes/Admin/SettingsPage.php:123
-msgid "Ce plugin met en œuvre la fonction de rétractation exigée à compter du 19 juin 2026 par l'article 11 bis de la directive (UE) 2011/83 modifiée, transposé en France aux articles L.221-21 et D.221-5 du code de la consommation."
-msgstr "This plugin implements the withdrawal function required from 19 June 2026 by Article 11a of Directive (EU) 2011/83 as amended, transposed in France into Articles L.221-21 and D.221-5 of the Consumer Code."
+msgid ""
+"Ce plugin met en œuvre la fonction de rétractation exigée à compter du 19 "
+"juin 2026 par l'article 11 bis de la directive (UE) 2011/83 modifiée, "
+"transposé en France aux articles L.221-21 et D.221-5 du code de la "
+"consommation."
+msgstr ""
+"This plugin implements the withdrawal function required from 19 June 2026 by "
+"Article 11a of Directive (EU) 2011/83 as amended, transposed in France into "
+"Articles L.221-21 and D.221-5 of the Consumer Code."
 
 #: includes/Admin/SettingsPage.php:126
-msgid "Il ne collecte aucune donnée d'usage, n'affiche aucune publicité et n'appelle aucun service tiers, à l'exception facultative de la vérification des mises à jour sur GitHub."
-msgstr "It collects no usage data, displays no advertising and calls no third-party service, apart from the optional update check on GitHub."
+msgid ""
+"Il ne collecte aucune donnée d'usage, n'affiche aucune publicité et "
+"n'appelle aucun service tiers, à l'exception facultative de la vérification "
+"des mises à jour sur GitHub."
+msgstr ""
+"It collects no usage data, displays no advertising and calls no third-party "
+"service, apart from the optional update check on GitHub."
 
 #: includes/Admin/SettingsPage.php:163
 msgid "Codes courts et bloc"
@@ -245,6 +263,62 @@ msgstr "View the page"
 msgid "Créer la page automatiquement"
 msgstr "Create the page automatically"
 
+#. translators: %d : nombre de jours.
+#: includes/Core/Privacy.php:47
+#, php-format
+msgid ""
+"Ces données sont supprimées automatiquement %d jours après le dépôt de la "
+"déclaration."
+msgstr "This data is deleted automatically %d days after the declaration is submitted."
+
+#: includes/Core/Privacy.php:50
+msgid ""
+"Ces données sont conservées sans limite de durée configurée : elles "
+"constituent la preuve de la déclaration. Définissez une durée de purge "
+"adaptée à votre politique de conservation."
+msgstr "This data is kept with no configured time limit: it constitutes proof of the declaration. Set a purge period in line with your retention policy."
+
+#: includes/Core/Privacy.php:53
+msgid ""
+"L'adresse IP du déclarant est également enregistrée, sur décision du "
+"responsable de traitement."
+msgstr "The declarant's IP address is also recorded, at the controller's decision."
+
+#: includes/Core/Privacy.php:54
+msgid "Aucune adresse IP n'est enregistrée."
+msgstr "No IP address is recorded."
+
+#: includes/Core/Privacy.php:57
+msgid ""
+"Section suggérée par l'extension 10gital Rétractation. Adaptez-la à votre "
+"situation avant publication."
+msgstr "Suggested section from the 10gital Withdrawal plugin. Adapt it to your situation before publishing."
+
+#: includes/Core/Privacy.php:59
+msgid "Déclarations de rétractation"
+msgstr "Withdrawal declarations"
+
+#: includes/Core/Privacy.php:60
+msgid ""
+"Lorsque vous exercez votre droit de rétractation depuis notre site, nous "
+"enregistrons : vos nom et prénom, l'adresse e-mail que vous indiquez pour "
+"recevoir l'accusé de réception, l'identification de la commande concernée, "
+"les articles et quantités visés, le motif que vous choisissez éventuellement "
+"de communiquer, ainsi que la date et l'heure de votre déclaration."
+msgstr "When you exercise your right of withdrawal on our site, we record: your first and last name, the email address you give to receive the acknowledgement of receipt, the identification of the order concerned, the items and quantities involved, any reason you choose to give, and the date and time of your declaration."
+
+#: includes/Core/Privacy.php:62
+msgid ""
+"Ces informations sont nécessaires au traitement de votre rétractation et à "
+"la preuve de son dépôt, conformément aux articles L.221-21 et suivants du "
+"code de la consommation. Elles ne sont transmises à aucun tiers et ne "
+"servent à aucune finalité commerciale."
+msgstr "This information is necessary to process your withdrawal and to prove that it was submitted, in accordance with Article L.221-21 et seq. of the French Consumer Code. It is not passed on to any third party and is not used for any commercial purpose."
+
+#: includes/Core/Privacy.php:66
+msgid "10gital Rétractation"
+msgstr "10gital Withdrawal"
+
 #: includes/Core/Updater.php:261
 msgid "Aucune note de publication."
 msgstr "No release notes."
@@ -265,13 +339,35 @@ msgstr "Refunded"
 msgid "Refusée"
 msgstr "Rejected"
 
+#: includes/Declaration.php:107
+msgid "Article de démonstration"
+msgstr "Sample item"
+
+#: includes/Declaration.php:126
+msgid "Le produit ne correspond pas à mon besoin."
+msgstr "The product does not meet my needs."
+
+#: includes/Declaration.php:158
+msgid ""
+"Aperçu : le contenu intégral de la déclaration du consommateur figure ici, "
+"avec sa date et son heure d'envoi."
+msgstr "Preview: the consumer's full declaration appears here, together with its date and time of submission."
+
 #: includes/Eligibility.php:220
-msgid "Le statut actuel de cette commande ne permet pas de déposer une déclaration de rétractation en ligne."
-msgstr "The current status of this order does not allow an online withdrawal declaration."
+msgid ""
+"Le statut actuel de cette commande ne permet pas de déposer une déclaration "
+"de rétractation en ligne."
+msgstr ""
+"The current status of this order does not allow an online withdrawal "
+"declaration."
 
 #: includes/Eligibility.php:224
-msgid "Aucun article de cette commande n'ouvre droit à rétractation, ou une déclaration a déjà été déposée pour la totalité des articles."
-msgstr "No item in this order carries a right of withdrawal, or a declaration has already been submitted for every item."
+msgid ""
+"Aucun article de cette commande n'ouvre droit à rétractation, ou une "
+"déclaration a déjà été déposée pour la totalité des articles."
+msgstr ""
+"No item in this order carries a right of withdrawal, or a declaration has "
+"already been submitted for every item."
 
 #. translators: %s : date limite.
 #: includes/Eligibility.php:230
@@ -284,8 +380,14 @@ msgid "Rétractation — accusé de réception"
 msgstr "Withdrawal — acknowledgement of receipt"
 
 #: includes/Emails/Acknowledgement.php:37
-msgid "Envoyé au consommateur immédiatement après le dépôt de sa déclaration de rétractation. Cet e-mail constitue l'accusé de réception sur support durable exigé par la réglementation : il est fortement déconseillé de le désactiver."
-msgstr "Sent to the consumer immediately after their withdrawal declaration is submitted. This email is the acknowledgement of receipt on a durable medium required by law: disabling it is strongly discouraged."
+msgid ""
+"Envoyé au consommateur immédiatement après le dépôt de sa déclaration de "
+"rétractation. Cet e-mail constitue l'accusé de réception sur support durable "
+"exigé par la réglementation : il est fortement déconseillé de le désactiver."
+msgstr ""
+"Sent to the consumer immediately after their withdrawal declaration is "
+"submitted. This email is the acknowledgement of receipt on a durable medium "
+"required by law: disabling it is strongly discouraged."
 
 #: includes/Emails/Acknowledgement.php:56
 msgid "Accusé de réception de votre rétractation ({reference})"
@@ -300,8 +402,10 @@ msgid "Rétractation — notification interne"
 msgstr "Withdrawal — internal notification"
 
 #: includes/Emails/MerchantNotification.php:34
-msgid "Prévient la boutique qu'une déclaration de rétractation vient d'être déposée."
-msgstr "Notifies the shop that a withdrawal declaration has just been submitted."
+msgid ""
+"Prévient la boutique qu'une déclaration de rétractation vient d'être déposée."
+msgstr ""
+"Notifies the shop that a withdrawal declaration has just been submitted."
 
 #: includes/Emails/MerchantNotification.php:53
 msgid "[{site_title}] Rétractation reçue — commande #{order_number}"
@@ -330,8 +434,12 @@ msgid "Cette commande n'est pas accessible depuis votre compte."
 msgstr "This order is not accessible from your account."
 
 #: includes/Frontend/Form.php:147
-msgid "Cette demande n'a pas pu être authentifiée. Merci de recommencer depuis le début."
-msgstr "This request could not be authenticated. Please start again from the beginning."
+msgid ""
+"Cette demande n'a pas pu être authentifiée. Merci de recommencer depuis le "
+"début."
+msgstr ""
+"This request could not be authenticated. Please start again from the "
+"beginning."
 
 #: includes/Frontend/OrderLookup.php:68
 msgid "Merci d'indiquer un numéro de commande et une adresse e-mail valides."
@@ -341,9 +449,14 @@ msgstr "Please provide a valid order number and email address."
 msgid "Trop de tentatives. Merci de réessayer dans une quinzaine de minutes."
 msgstr "Too many attempts. Please try again in about fifteen minutes."
 
-#: includes/Frontend/OrderLookup.php:214
-msgid "Aucune commande ne correspond à ce numéro et à cette adresse e-mail. Vérifiez les informations figurant sur votre e-mail de confirmation de commande."
-msgstr "No order matches this number and email address. Check the details on your order confirmation email."
+#: includes/Frontend/OrderLookup.php:218
+msgid ""
+"Aucune commande ne correspond à ce numéro et à cette adresse e-mail. "
+"Vérifiez les informations figurant sur votre e-mail de confirmation de "
+"commande."
+msgstr ""
+"No order matches this number and email address. Check the details on your "
+"order confirmation email."
 
 #: includes/OrderStatus.php:47 includes/OrderStatus.php:71
 #: includes/OrderStatus.php:76
@@ -364,24 +477,36 @@ msgid "Page de rétractation"
 msgstr "Withdrawal page"
 
 #: includes/Settings.php:46
-msgid "Page contenant le code court [retractation]. Créée automatiquement à l'activation."
-msgstr "Page containing the [retractation] shortcode. Created automatically on activation."
+msgid ""
+"Page contenant le code court [retractation]. Créée automatiquement à "
+"l'activation."
+msgstr ""
+"Page containing the [retractation] shortcode. Created automatically on "
+"activation."
 
 #: includes/Settings.php:52
 msgid "Libellé du bouton"
 msgstr "Button label"
 
 #: includes/Settings.php:53
-msgid "Doit être une formule dénuée d'ambiguïté (art. D.221-5). Formulations sûres : « Renoncer au contrat ici », « Se rétracter du contrat ici », « Exercer mon droit de rétractation »."
-msgstr "Must be unambiguous wording (Art. D.221-5). Safe wordings: “Withdraw from the contract here”, “Exercise my right of withdrawal”."
+msgid ""
+"Doit être une formule dénuée d'ambiguïté (art. D.221-5). Formulations "
+"sûres : « Renoncer au contrat ici », « Se rétracter du contrat ici », "
+"« Exercer mon droit de rétractation »."
+msgstr ""
+"Must be unambiguous wording (Art. D.221-5). Safe wordings: “Withdraw from "
+"the contract here”, “Exercise my right of withdrawal”."
 
 #: includes/Settings.php:59
 msgid "Libellé du bouton de confirmation"
 msgstr "Confirmation button label"
 
 #: includes/Settings.php:60
-msgid "Second bouton, exigé par l'article 11 bis de la directive (UE) 2011/83 modifiée."
-msgstr "Second button, required by Article 11a of Directive (EU) 2011/83 as amended."
+msgid ""
+"Second bouton, exigé par l'article 11 bis de la directive (UE) 2011/83 "
+"modifiée."
+msgstr ""
+"Second button, required by Article 11a of Directive (EU) 2011/83 as amended."
 
 #: includes/Settings.php:66
 msgid "Texte d'introduction"
@@ -420,8 +545,12 @@ msgid "Lien permanent en pied de page"
 msgstr "Permanent link in the footer"
 
 #: includes/Settings.php:97
-msgid "Recommandé : la fonction doit être « disponible en permanence » et « aisément accessible » pendant tout le délai de rétractation."
-msgstr "Recommended: the function must be “permanently available” and “easily accessible” throughout the withdrawal period."
+msgid ""
+"Recommandé : la fonction doit être « disponible en permanence » et "
+"« aisément accessible » pendant tout le délai de rétractation."
+msgstr ""
+"Recommended: the function must be “permanently available” and “easily "
+"accessible” throughout the withdrawal period."
 
 #: includes/Settings.php:103
 msgid "Lien dans les e-mails WooCommerce"
@@ -460,16 +589,25 @@ msgid "Point de départ du délai"
 msgstr "Start of the period"
 
 #: includes/Settings.php:145
-msgid "Pour les biens, le délai court à compter de la réception. Le statut « Terminée » en est l'approximation la plus fidèle ; à défaut, la date de commande est utilisée."
-msgstr "For goods, the period runs from delivery. The “Completed” status is the closest approximation; failing that, the order date is used."
+msgid ""
+"Pour les biens, le délai court à compter de la réception. Le statut "
+"« Terminée » en est l'approximation la plus fidèle ; à défaut, la date de "
+"commande est utilisée."
+msgstr ""
+"For goods, the period runs from delivery. The “Completed” status is the "
+"closest approximation; failing that, the order date is used."
 
 #: includes/Settings.php:153
 msgid "Jours de tolérance supplémentaires"
 msgstr "Extra grace days"
 
 #: includes/Settings.php:154
-msgid "Marge appliquée après le délai, pour absorber les écarts entre la date de livraison réelle et le statut de la commande."
-msgstr "Margin applied after the deadline, to absorb the gap between actual delivery and order status."
+msgid ""
+"Marge appliquée après le délai, pour absorber les écarts entre la date de "
+"livraison réelle et le statut de la commande."
+msgstr ""
+"Margin applied after the deadline, to absorb the gap between actual delivery "
+"and order status."
 
 #: includes/Settings.php:160
 msgid "Statuts de commande concernés"
@@ -484,16 +622,25 @@ msgid "Refuser les demandes hors délai"
 msgstr "Refuse late requests"
 
 #: includes/Settings.php:168
-msgid "Déconseillé. Par défaut, une demande hors délai est enregistrée et signalée comme telle : c'est vous qui tranchez, et vous conservez la preuve de la demande."
-msgstr "Not recommended. By default a late request is recorded and flagged as such: you decide, and you keep proof of the request."
+msgid ""
+"Déconseillé. Par défaut, une demande hors délai est enregistrée et signalée "
+"comme telle : c'est vous qui tranchez, et vous conservez la preuve de la "
+"demande."
+msgstr ""
+"Not recommended. By default a late request is recorded and flagged as such: "
+"you decide, and you keep proof of the request."
 
 #: includes/Settings.php:174
 msgid "Exclure les produits virtuels ou téléchargeables"
 msgstr "Exclude virtual or downloadable products"
 
 #: includes/Settings.php:175
-msgid "À n'activer que si le consommateur a expressément renoncé à son droit avant l'exécution (art. L.221-28 13°)."
-msgstr "Only enable this if the consumer expressly waived their right before performance (Art. L.221-28 13°)."
+msgid ""
+"À n'activer que si le consommateur a expressément renoncé à son droit avant "
+"l'exécution (art. L.221-28 13°)."
+msgstr ""
+"Only enable this if the consumer expressly waived their right before "
+"performance (Art. L.221-28 13°)."
 
 #: includes/Settings.php:181
 msgid "Produits exclus"
@@ -516,23 +663,32 @@ msgid "Proposer un motif (facultatif)"
 msgstr "Offer a reason (optional)"
 
 #: includes/Settings.php:196
-msgid "Le motif ne peut jamais être rendu obligatoire : le droit de rétractation s'exerce sans justification."
-msgstr "The reason can never be made mandatory: the right of withdrawal is exercised without justification."
+msgid ""
+"Le motif ne peut jamais être rendu obligatoire : le droit de rétractation "
+"s'exerce sans justification."
+msgstr ""
+"The reason can never be made mandatory: the right of withdrawal is exercised "
+"without justification."
 
 #: includes/Settings.php:204
 msgid "Changer le statut de la commande"
 msgstr "Change the order status"
 
 #: includes/Settings.php:205
-msgid "Bascule la commande vers « Rétractation demandée » lorsque la déclaration porte sur la totalité de la commande."
-msgstr "Moves the order to “Withdrawal requested” when the declaration covers the whole order."
+msgid ""
+"Bascule la commande vers « Rétractation demandée » lorsque la déclaration "
+"porte sur la totalité de la commande."
+msgstr ""
+"Moves the order to “Withdrawal requested” when the declaration covers the "
+"whole order."
 
 #: includes/Settings.php:211
 msgid "Destinataire des notifications"
 msgstr "Notification recipients"
 
 #: includes/Settings.php:212
-msgid "Adresses séparées par des virgules. Vide = adresse d'administration du site."
+msgid ""
+"Adresses séparées par des virgules. Vide = adresse d'administration du site."
 msgstr "Comma-separated addresses. Empty = the site administration address."
 
 #: includes/Settings.php:218
@@ -540,24 +696,36 @@ msgid "Conserver l'adresse IP du déclarant"
 msgstr "Store the declarant's IP address"
 
 #: includes/Settings.php:219
-msgid "Non nécessaire à la conformité. À n'activer qu'avec une base légale et une mention dans votre politique de confidentialité."
-msgstr "Not required for compliance. Only enable with a legal basis and a mention in your privacy policy."
+msgid ""
+"Non nécessaire à la conformité. À n'activer qu'avec une base légale et une "
+"mention dans votre politique de confidentialité."
+msgstr ""
+"Not required for compliance. Only enable with a legal basis and a mention in "
+"your privacy policy."
 
 #: includes/Settings.php:227
 msgid "Purge automatique après (jours)"
 msgstr "Automatic purge after (days)"
 
 #: includes/Settings.php:228
-msgid "0 = aucune purge. Les déclarations servent de preuve : conserver au moins la durée de prescription applicable."
-msgstr "0 = no purge. Declarations serve as evidence: keep them at least for the applicable limitation period."
+msgid ""
+"0 = aucune purge. Les déclarations servent de preuve : conserver au moins la "
+"durée de prescription applicable."
+msgstr ""
+"0 = no purge. Declarations serve as evidence: keep them at least for the "
+"applicable limitation period."
 
 #: includes/Settings.php:234
 msgid "Vérifier les mises à jour sur GitHub"
 msgstr "Check for updates on GitHub"
 
 #: includes/Settings.php:235
-msgid "Interroge api.github.com deux fois par jour pour connaître la dernière version publiée. Aucune donnée du site n'est transmise."
-msgstr "Queries api.github.com twice a day to learn the latest published version. No site data is transmitted."
+msgid ""
+"Interroge api.github.com deux fois par jour pour connaître la dernière "
+"version publiée. Aucune donnée du site n'est transmise."
+msgstr ""
+"Queries api.github.com twice a day to learn the latest published version. No "
+"site data is transmitted."
 
 #: includes/Settings.php:247
 msgid "Général"
@@ -576,23 +744,32 @@ msgid "Merci d'indiquer vos nom et prénom."
 msgstr "Please provide your first and last name."
 
 #: includes/Submission.php:41
-msgid "Merci d'indiquer une adresse e-mail valide pour recevoir votre accusé de réception."
-msgstr "Please provide a valid email address to receive your acknowledgement of receipt."
+msgid ""
+"Merci d'indiquer une adresse e-mail valide pour recevoir votre accusé de "
+"réception."
+msgstr ""
+"Please provide a valid email address to receive your acknowledgement of "
+"receipt."
 
 #: includes/Submission.php:45
 msgid "Merci de confirmer votre décision de vous rétracter avant de valider."
 msgstr "Please confirm your decision to withdraw before submitting."
 
 #: includes/Submission.php:92
-msgid "Votre déclaration n'a pas pu être enregistrée. Merci de réessayer ou de nous contacter directement."
-msgstr "Your declaration could not be saved. Please try again or contact us directly."
+msgid ""
+"Votre déclaration n'a pas pu être enregistrée. Merci de réessayer ou de nous "
+"contacter directement."
+msgstr ""
+"Your declaration could not be saved. Please try again or contact us directly."
 
 #: includes/Submission.php:98
 msgid "Votre déclaration n'a pas pu être relue après enregistrement."
 msgstr "Your declaration could not be read back after saving."
 
 #: includes/Submission.php:160 templates/form/declare.php:67
-msgid "Merci de sélectionner au moins un article sur lequel porte votre rétractation."
+msgid ""
+"Merci de sélectionner au moins un article sur lequel porte votre "
+"rétractation."
 msgstr "Please select at least one item covered by your withdrawal."
 
 #: includes/Submission.php:202
@@ -640,12 +817,22 @@ msgid "Motif communiqué à titre facultatif"
 msgstr "Reason given voluntarily"
 
 #: includes/Submission.php:257 templates/form/declare.php:172
-msgid "Je notifie par la présente ma rétractation du contrat portant sur la vente des biens ou la prestation des services désignés ci-dessus."
-msgstr "I hereby give notice that I withdraw from the contract for the sale of the goods or the supply of the services designated above."
+msgid ""
+"Je notifie par la présente ma rétractation du contrat portant sur la vente "
+"des biens ou la prestation des services désignés ci-dessus."
+msgstr ""
+"I hereby give notice that I withdraw from the contract for the sale of the "
+"goods or the supply of the services designated above."
 
 #: includes/Submission.php:261
-msgid "Remarque : cette déclaration a été déposée après l'expiration du délai de rétractation calculé par la boutique. Elle a néanmoins été enregistrée et sera examinée."
-msgstr "Note: this declaration was submitted after the withdrawal period calculated by the shop had expired. It has nevertheless been recorded and will be reviewed."
+msgid ""
+"Remarque : cette déclaration a été déposée après l'expiration du délai de "
+"rétractation calculé par la boutique. Elle a néanmoins été enregistrée et "
+"sera examinée."
+msgstr ""
+"Note: this declaration was submitted after the withdrawal period calculated "
+"by the shop had expired. It has nevertheless been recorded and will be "
+"reviewed."
 
 #. translators: 1 : référence, 2 : portée, 3 : montant.
 #: includes/Submission.php:286
@@ -680,16 +867,26 @@ msgid "Déclaration mise à jour."
 msgstr "Declaration updated."
 
 #: templates/admin/detail.php:31
-msgid "Cette déclaration a été déposée après l'expiration du délai calculé par la boutique. Vérifiez la date de livraison réelle avant de la refuser : le point de départ légal est la réception du bien par le consommateur."
-msgstr "This declaration was submitted after the period calculated by the shop had expired. Check the actual delivery date before rejecting it: the legal starting point is the consumer's receipt of the goods."
+msgid ""
+"Cette déclaration a été déposée après l'expiration du délai calculé par la "
+"boutique. Vérifiez la date de livraison réelle avant de la refuser : le "
+"point de départ légal est la réception du bien par le consommateur."
+msgstr ""
+"This declaration was submitted after the period calculated by the shop had "
+"expired. Check the actual delivery date before rejecting it: the legal "
+"starting point is the consumer's receipt of the goods."
 
 #: templates/admin/detail.php:38
 msgid "Contenu de la déclaration"
 msgstr "Content of the declaration"
 
 #: templates/admin/detail.php:39
-msgid "Texte exact transmis au consommateur dans son accusé de réception. C'est cette version qui fait foi."
-msgstr "Exact text sent to the consumer in their acknowledgement of receipt. This is the authoritative version."
+msgid ""
+"Texte exact transmis au consommateur dans son accusé de réception. C'est "
+"cette version qui fait foi."
+msgstr ""
+"Exact text sent to the consumer in their acknowledgement of receipt. This is "
+"the authoritative version."
 
 #: templates/admin/detail.php:48
 msgid "Produit"
@@ -720,8 +917,12 @@ msgid "Ouvrir la commande"
 msgstr "Open the order"
 
 #: templates/admin/detail.php:115
-msgid "Le remboursement s'effectue depuis la commande, avec les outils natifs de WooCommerce. Ce plugin ne déclenche jamais de remboursement automatique."
-msgstr "Refunds are issued from the order, using WooCommerce's own tools. This plugin never triggers an automatic refund."
+msgid ""
+"Le remboursement s'effectue depuis la commande, avec les outils natifs de "
+"WooCommerce. Ce plugin ne déclenche jamais de remboursement automatique."
+msgstr ""
+"Refunds are issued from the order, using WooCommerce's own tools. This "
+"plugin never triggers an automatic refund."
 
 #: templates/admin/detail.php:121
 msgid "Informations"
@@ -754,23 +955,44 @@ msgstr "Hello %s,"
 #: templates/emails/plain/ret10g-acknowledgement.php:24
 #: templates/emails/ret10g-acknowledgement.php:33
 #, php-format
-msgid "Nous accusons réception de votre déclaration de rétractation, envoyée le %1$s et portant sur la commande n° %2$s."
-msgstr "We acknowledge receipt of your withdrawal declaration, sent on %1$s and covering order no. %2$s."
+msgid ""
+"Nous accusons réception de votre déclaration de rétractation, envoyée le "
+"%1$s et portant sur la commande n° %2$s."
+msgstr ""
+"We acknowledge receipt of your withdrawal declaration, sent on %1$s and "
+"covering order no. %2$s."
 
 #: templates/emails/plain/ret10g-acknowledgement.php:29
 #: templates/emails/ret10g-acknowledgement.php:41
-msgid "Conservez cet e-mail : il constitue la preuve du contenu de votre déclaration ainsi que de sa date et de son heure d'envoi."
-msgstr "Keep this email: it is proof of the content of your declaration and of its date and time of submission."
+msgid ""
+"Conservez cet e-mail : il constitue la preuve du contenu de votre "
+"déclaration ainsi que de sa date et de son heure d'envoi."
+msgstr ""
+"Keep this email: it is proof of the content of your declaration and of its "
+"date and time of submission."
 
 #: templates/emails/plain/ret10g-acknowledgement.php:35
 #: templates/emails/ret10g-acknowledgement.php:53
-msgid "Nous vous rembourserons l'ensemble des sommes versées, y compris les frais de livraison standard, au plus tard 14 jours après avoir été informés de votre décision. Nous pouvons différer ce remboursement jusqu'à la récupération des biens ou jusqu'à ce que vous ayez fourni une preuve de leur expédition."
-msgstr "We will reimburse all payments received, including standard delivery costs, no later than 14 days after being informed of your decision. We may withhold reimbursement until we have received the goods back or you have supplied evidence of having sent them back."
+msgid ""
+"Nous vous rembourserons l'ensemble des sommes versées, y compris les frais "
+"de livraison standard, au plus tard 14 jours après avoir été informés de "
+"votre décision. Nous pouvons différer ce remboursement jusqu'à la "
+"récupération des biens ou jusqu'à ce que vous ayez fourni une preuve de leur "
+"expédition."
+msgstr ""
+"We will reimburse all payments received, including standard delivery costs, "
+"no later than 14 days after being informed of your decision. We may withhold "
+"reimbursement until we have received the goods back or you have supplied "
+"evidence of having sent them back."
 
 #: templates/emails/plain/ret10g-acknowledgement.php:36
 #: templates/emails/ret10g-acknowledgement.php:57
-msgid "Vous devez nous renvoyer les biens sans retard excessif, et au plus tard 14 jours après l'envoi de cette déclaration."
-msgstr "You must send the goods back without undue delay and no later than 14 days after sending this declaration."
+msgid ""
+"Vous devez nous renvoyer les biens sans retard excessif, et au plus tard 14 "
+"jours après l'envoi de cette déclaration."
+msgstr ""
+"You must send the goods back without undue delay and no later than 14 days "
+"after sending this declaration."
 
 #. translators: 1 : référence, 2 : numéro de commande.
 #: templates/emails/plain/ret10g-merchant.php:18
@@ -781,7 +1003,8 @@ msgstr "Declaration %1$s has just been submitted for order no. %2$s."
 
 #: templates/emails/plain/ret10g-merchant.php:24
 msgid "Attention : déclaration déposée hors du délai calculé par la boutique."
-msgstr "Warning: declaration submitted outside the period calculated by the shop."
+msgstr ""
+"Warning: declaration submitted outside the period calculated by the shop."
 
 #: templates/emails/ret10g-acknowledgement.php:44
 #: templates/form/confirmed.php:46
@@ -793,8 +1016,13 @@ msgid "Et maintenant ?"
 msgstr "What happens next?"
 
 #: templates/emails/ret10g-merchant.php:34
-msgid "Attention : cette déclaration a été déposée après l'expiration du délai calculé par la boutique. Vérifiez la date de livraison réelle avant de refuser."
-msgstr "Warning: this declaration was submitted after the period calculated by the shop had expired. Check the actual delivery date before rejecting it."
+msgid ""
+"Attention : cette déclaration a été déposée après l'expiration du délai "
+"calculé par la boutique. Vérifiez la date de livraison réelle avant de "
+"refuser."
+msgstr ""
+"Warning: this declaration was submitted after the period calculated by the "
+"shop had expired. Check the actual delivery date before rejecting it."
 
 #: templates/emails/ret10g-merchant.php:42 templates/form/confirmed.php:41
 msgid "Montant concerné"
@@ -815,8 +1043,12 @@ msgstr "Your withdrawal has been recorded"
 #. translators: %s : adresse e-mail.
 #: templates/form/confirmed.php:20
 #, php-format
-msgid "Un accusé de réception vient d'être envoyé à %s. Conservez-le : il fait foi de la date et de l'heure de votre déclaration."
-msgstr "An acknowledgement of receipt has just been sent to %s. Keep it: it is proof of the date and time of your declaration."
+msgid ""
+"Un accusé de réception vient d'être envoyé à %s. Conservez-le : il fait foi "
+"de la date et de l'heure de votre déclaration."
+msgstr ""
+"An acknowledgement of receipt has just been sent to %s. Keep it: it is proof "
+"of the date and time of your declaration."
 
 #: templates/form/confirmed.php:33
 msgid "Date et heure"
@@ -829,8 +1061,13 @@ msgstr "Submit another declaration"
 #. translators: %s : date limite.
 #: templates/form/declare.php:37
 #, php-format
-msgid "Le délai de rétractation calculé pour cette commande a expiré le %s. Vous pouvez tout de même déposer votre déclaration : elle sera enregistrée, horodatée et examinée."
-msgstr "The withdrawal period calculated for this order expired on %s. You may still submit your declaration: it will be recorded, time-stamped and reviewed."
+msgid ""
+"Le délai de rétractation calculé pour cette commande a expiré le %s. Vous "
+"pouvez tout de même déposer votre déclaration : elle sera enregistrée, "
+"horodatée et examinée."
+msgstr ""
+"The withdrawal period calculated for this order expired on %s. You may still "
+"submit your declaration: it will be recorded, time-stamped and reviewed."
 
 #: templates/form/declare.php:45
 msgid "Contrat concerné"
@@ -879,12 +1116,20 @@ msgid "Motif (facultatif)"
 msgstr "Reason (optional)"
 
 #: templates/form/declare.php:161
-msgid "Vous n'avez pas à motiver votre décision. Ce champ nous aide simplement à améliorer nos produits."
-msgstr "You do not have to give a reason for your decision. This field simply helps us improve our products."
+msgid ""
+"Vous n'avez pas à motiver votre décision. Ce champ nous aide simplement à "
+"améliorer nos produits."
+msgstr ""
+"You do not have to give a reason for your decision. This field simply helps "
+"us improve our products."
 
 #: templates/form/declare.php:184
-msgid "Un accusé de réception horodaté vous sera envoyé immédiatement à l'adresse indiquée ci-dessus."
-msgstr "A time-stamped acknowledgement of receipt will be sent to the address above immediately."
+msgid ""
+"Un accusé de réception horodaté vous sera envoyé immédiatement à l'adresse "
+"indiquée ci-dessus."
+msgstr ""
+"A time-stamped acknowledgement of receipt will be sent to the address above "
+"immediately."
 
 #: templates/form/lookup.php:31
 msgid "Vos commandes concernées"
@@ -905,8 +1150,12 @@ msgid "Une autre commande ?"
 msgstr "Another order?"
 
 #: templates/form/lookup.php:80
-msgid "Aucun compte n'est nécessaire : indiquez le numéro de commande et l'adresse e-mail utilisée lors de l'achat."
-msgstr "No account is needed: enter the order number and the email address used for the purchase."
+msgid ""
+"Aucun compte n'est nécessaire : indiquez le numéro de commande et l'adresse "
+"e-mail utilisée lors de l'achat."
+msgstr ""
+"No account is needed: enter the order number and the email address used for "
+"the purchase."
 
 #: templates/form/lookup.php:88
 msgid "Numéro de commande"

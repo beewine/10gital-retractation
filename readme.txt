@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 10.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,11 @@ Non, les déclarations sont conservées : elles constituent une preuve. Pour tou
 Il met en œuvre les exigences techniques du texte. Vos CGV, votre information précontractuelle et votre politique de remboursement relèvent de votre conseil juridique.
 
 == Changelog ==
+
+= 1.0.1 =
+* Correction : l'aperçu et l'envoi de test des e-mails depuis les réglages WooCommerce échouaient.
+* Correction : la recherche de commande pouvait renvoyer une commande voisine lorsque le numéro saisi était introuvable.
+* Ajout : section suggérée pour la politique de confidentialité (Réglages → Confidentialité).
 
 = 1.0.0 =
 * Première version publique.

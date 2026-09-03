@@ -11,6 +11,7 @@ use Dixgital\Retractation\Admin\DeclarationsPage;
 use Dixgital\Retractation\Admin\OrderMetaBox;
 use Dixgital\Retractation\Admin\SettingsPage;
 use Dixgital\Retractation\Core\Install;
+use Dixgital\Retractation\Core\Privacy;
 use Dixgital\Retractation\Core\Updater;
 use Dixgital\Retractation\Emails\Manager as EmailManager;
 use Dixgital\Retractation\Frontend\Assets;
@@ -82,6 +83,7 @@ class Plugin {
 			( new DeclarationsPage() )->register();
 			( new SettingsPage() )->register();
 			( new OrderMetaBox() )->register();
+			( new Privacy() )->register();
 
 			add_action( 'admin_init', array( SettingsPage::class, 'maybe_create_page' ) );
 		}

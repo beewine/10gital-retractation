@@ -178,7 +178,11 @@ class OrderLookup {
 			}
 		}
 
-		return $candidate instanceof \WC_Order ? $candidate : null;
+		// Aucune correspondance : ne jamais renvoyer une commande dont le
+		// numéro diffère de celui saisi, même si elle appartient à la même
+		// adresse e-mail. Le client obtiendrait le formulaire d'une autre
+		// commande que celle qu'il a demandée.
+		return null;
 	}
 
 	/**

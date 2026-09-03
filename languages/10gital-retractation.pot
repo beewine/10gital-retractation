@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.0\n"
+"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -255,6 +255,62 @@ msgstr ""
 msgid "Créer la page automatiquement"
 msgstr ""
 
+#. translators: %d : nombre de jours.
+#: includes/Core/Privacy.php:47
+#, php-format
+msgid ""
+"Ces données sont supprimées automatiquement %d jours après le dépôt de la "
+"déclaration."
+msgstr ""
+
+#: includes/Core/Privacy.php:50
+msgid ""
+"Ces données sont conservées sans limite de durée configurée : elles "
+"constituent la preuve de la déclaration. Définissez une durée de purge "
+"adaptée à votre politique de conservation."
+msgstr ""
+
+#: includes/Core/Privacy.php:53
+msgid ""
+"L'adresse IP du déclarant est également enregistrée, sur décision du "
+"responsable de traitement."
+msgstr ""
+
+#: includes/Core/Privacy.php:54
+msgid "Aucune adresse IP n'est enregistrée."
+msgstr ""
+
+#: includes/Core/Privacy.php:57
+msgid ""
+"Section suggérée par l'extension 10gital Rétractation. Adaptez-la à votre "
+"situation avant publication."
+msgstr ""
+
+#: includes/Core/Privacy.php:59
+msgid "Déclarations de rétractation"
+msgstr ""
+
+#: includes/Core/Privacy.php:60
+msgid ""
+"Lorsque vous exercez votre droit de rétractation depuis notre site, nous "
+"enregistrons : vos nom et prénom, l'adresse e-mail que vous indiquez pour "
+"recevoir l'accusé de réception, l'identification de la commande concernée, "
+"les articles et quantités visés, le motif que vous choisissez éventuellement "
+"de communiquer, ainsi que la date et l'heure de votre déclaration."
+msgstr ""
+
+#: includes/Core/Privacy.php:62
+msgid ""
+"Ces informations sont nécessaires au traitement de votre rétractation et à "
+"la preuve de son dépôt, conformément aux articles L.221-21 et suivants du "
+"code de la consommation. Elles ne sont transmises à aucun tiers et ne "
+"servent à aucune finalité commerciale."
+msgstr ""
+
+#: includes/Core/Privacy.php:66
+msgid "10gital Rétractation"
+msgstr ""
+
 #: includes/Core/Updater.php:261
 msgid "Aucune note de publication."
 msgstr ""
@@ -273,6 +329,20 @@ msgstr ""
 
 #: includes/Declaration.php:57
 msgid "Refusée"
+msgstr ""
+
+#: includes/Declaration.php:107
+msgid "Article de démonstration"
+msgstr ""
+
+#: includes/Declaration.php:126
+msgid "Le produit ne correspond pas à mon besoin."
+msgstr ""
+
+#: includes/Declaration.php:158
+msgid ""
+"Aperçu : le contenu intégral de la déclaration du consommateur figure ici, "
+"avec sa date et son heure d'envoi."
 msgstr ""
 
 #: includes/Eligibility.php:220
@@ -361,7 +431,7 @@ msgstr ""
 msgid "Trop de tentatives. Merci de réessayer dans une quinzaine de minutes."
 msgstr ""
 
-#: includes/Frontend/OrderLookup.php:214
+#: includes/Frontend/OrderLookup.php:218
 msgid ""
 "Aucune commande ne correspond à ce numéro et à cette adresse e-mail. "
 "Vérifiez les informations figurant sur votre e-mail de confirmation de "

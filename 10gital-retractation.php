@@ -3,7 +3,7 @@
  * Plugin Name:          10gital Rétractation pour WooCommerce
  * Plugin URI:           https://github.com/beewine/10gital-retractation
  * Description:          Fonction de rétractation électronique conforme à la directive (UE) 2023/2673 et aux articles L.221-21 / D.221-5 du code de la consommation. Aucun traceur, aucune publicité, aucun service tiers.
- * Version:              1.0.0
+ * Version:              1.0.1
  * Requires at least:    6.5
  * Requires PHP:         7.4
  * Requires Plugins:     woocommerce
@@ -21,7 +21,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'RET10G_VERSION', '1.0.0' );
+define( 'RET10G_VERSION', '1.0.1' );
 define( 'RET10G_DB_VERSION', '1.0.0' );
 define( 'RET10G_FILE', __FILE__ );
 define( 'RET10G_DIR', plugin_dir_path( __FILE__ ) );
