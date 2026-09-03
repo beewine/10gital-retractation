@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "dixgital/bouton-retractation",
+	"title": "Bouton de rétractation",
+	"category": "woocommerce",
+	"icon": "undo",
+	"description": "Bouton renvoyant vers la page de rétractation, conforme à la directive (UE) 2023/2673.",
+	"textdomain": "10gital-retractation",
+	"supports": {
+		"html": false,
+		"align": ["left", "center", "right"],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"attributes": {
+		"label": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "ret10g-front"
+}

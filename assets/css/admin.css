@@ -1,0 +1,119 @@
+/* 10gital Rétractation — styles d'administration. */
+
+.ret10g-admin__columns {
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+	align-items: start;
+	margin-top: 1rem;
+}
+
+@media screen and (max-width: 960px) {
+	.ret10g-admin__columns {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ret10g-card {
+	margin-bottom: 1.25rem;
+	padding: 1rem 1.25rem;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.ret10g-card h2 {
+	margin-top: 0;
+	font-size: 1rem;
+}
+
+.ret10g-card--intro {
+	max-width: 60rem;
+	border-left: 4px solid #2271b1;
+}
+
+.ret10g-statement {
+	margin: 0;
+	padding: 1rem;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	font-size: 12px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	overflow-x: auto;
+}
+
+.ret10g-meta {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ret10g-meta th,
+.ret10g-meta td {
+	padding: .4rem 0;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ret10g-meta th {
+	width: 45%;
+	font-weight: 600;
+	color: #50575e;
+}
+
+.ret10g-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.6;
+	white-space: nowrap;
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.ret10g-badge--received {
+	background: #e5f0fb;
+	color: #0a4b78;
+}
+
+.ret10g-badge--accepted {
+	background: #edfaef;
+	color: #0a5c22;
+}
+
+.ret10g-badge--refunded {
+	background: #f0f0f1;
+	color: #3c434a;
+}
+
+.ret10g-badge--rejected {
+	background: #fcf0f1;
+	color: #8a1f11;
+}
+
+.ret10g-badge--warning {
+	background: #fcf9e8;
+	color: #8a6116;
+}
+
+.ret10g-order-declarations {
+	margin: 0;
+}
+
+.ret10g-order-declarations li {
+	padding: .4rem 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ret10g-order-declarations li:last-child {
+	border-bottom: 0;
+}
+
+.ret10g-order-declarations span {
+	color: #646970;
+	font-size: 12px;
+}

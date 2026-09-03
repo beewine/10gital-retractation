@@ -1,0 +1,42 @@
+name: Anomalie
+description: Signaler un dysfonctionnement du plugin
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Ce qui se passe
+      description: Décrivez le comportement observé, et ce que vous attendiez.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Comment le reproduire
+      placeholder: |
+        1. Aller sur…
+        2. Cliquer sur…
+        3. Constater que…
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: "Plugin 1.0.0 · WordPress 6.8 · WooCommerce 10.0 · PHP 8.2"
+    validations:
+      required: true
+
+  - type: input
+    id: site
+    attributes:
+      label: Site concerné
+      description: Facultatif, utile en interne pour reproduire le contexte.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte utile
+      description: Thème, extensions de numérotation de commande, HPOS activé, messages d'erreur, journaux.

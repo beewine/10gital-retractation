@@ -1,0 +1,79 @@
+name: Intégration continue
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    name: Syntaxe PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Vérifier la syntaxe de tous les fichiers PHP livrés
+        run: |
+          set -e
+          find . -name '*.php' -not -path './.git/*' -not -path './tests/*' -print0 \
+            | xargs -0 -n1 -P4 php -l
+
+  tests:
+    name: Bancs d'essai
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Exécuter les tests
+        run: php tests/run.php
+
+  i18n:
+    name: Catalogues de traduction
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Vérifier le .po anglais
+        run: msgfmt --check --statistics -o /dev/null languages/10gital-retractation-en_US.po
+
+      - name: Vérifier que le .mo est à jour
+        run: |
+          msgfmt -o /tmp/rebuilt.mo languages/10gital-retractation-en_US.po
+          if ! cmp -s /tmp/rebuilt.mo languages/10gital-retractation-en_US.mo; then
+            echo "Le fichier .mo ne correspond pas au .po. Régénérez-le :"
+            echo "  msgfmt -o languages/10gital-retractation-en_US.mo languages/10gital-retractation-en_US.po"
+            exit 1
+          fi
+
+  version:
+    name: Cohérence des numéros de version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comparer l'en-tête, la constante et le readme
+        run: |
+          set -e
+          header=$(grep -m1 '^ \* Version:' 10gital-retractation.php | sed -E 's/.*Version: *//' | tr -d ' \r')
+          const=$(grep -m1 "define( 'RET10G_VERSION'" 10gital-retractation.php | sed -E "s/.*'([0-9.]+)'.*/\1/")
+          stable=$(grep -m1 '^Stable tag:' readme.txt | sed -E 's/.*: *//' | tr -d ' \r')
+          echo "en-tête=$header constante=$const readme=$stable"
+          test "$header" = "$const" || { echo "L'en-tête et la constante RET10G_VERSION divergent."; exit 1; }
+          test "$header" = "$stable" || { echo "readme.txt (Stable tag) diverge de l'en-tête."; exit 1; }

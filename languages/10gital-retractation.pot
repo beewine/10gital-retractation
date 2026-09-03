@@ -1,0 +1,1017 @@
+# Copyright (C) 2026 10gital
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/issues\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-03T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: xgettext\n"
+"X-Domain: 10gital-retractation\n"
+
+
+#: 10gital-retractation.php:57
+msgid "10gital Rétractation nécessite WooCommerce actif pour fonctionner."
+msgstr ""
+
+#: includes/Admin/CsvExport.php:28
+msgid "Droits insuffisants."
+msgstr ""
+
+#: includes/Admin/CsvExport.php:45 includes/Admin/ListTable.php:52
+#: includes/Submission.php:204 templates/form/confirmed.php:29
+msgid "Référence"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:46 includes/Admin/ListTable.php:53
+#: templates/admin/detail.php:124 templates/emails/ret10g-merchant.php:43
+msgid "Déposée le"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:47 includes/Admin/ListTable.php:54
+#: includes/Admin/ListTable.php:219 includes/Submission.php:208
+#: templates/admin/detail.php:145 templates/form/confirmed.php:37
+#: templates/form/declare.php:48
+msgid "Commande"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:48 templates/form/declare.php:139
+msgid "Prénom"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:49 templates/form/declare.php:144
+msgid "Nom"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:50
+msgid "E-mail"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:51 includes/Admin/ListTable.php:56
+#: templates/emails/ret10g-merchant.php:41
+msgid "Portée"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:52 includes/Admin/ListTable.php:57
+#: templates/admin/detail.php:51 templates/admin/detail.php:149
+msgid "Montant"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:53
+msgid "Devise"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:54
+msgid "Dans les délais"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:55 includes/Admin/ListTable.php:58
+#: includes/Settings.php:250 templates/admin/detail.php:86
+msgid "Traitement"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:56 templates/admin/detail.php:128
+msgid "Accusé envoyé le"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:57
+msgid "Motif"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:58 templates/admin/detail.php:44
+#: templates/emails/ret10g-merchant.php:46
+msgid "Articles"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:112 includes/Admin/ListTable.php:267
+msgid "Commande entière"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:112
+msgid "Partielle"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:115
+msgid "Oui"
+msgstr ""
+
+#: includes/Admin/CsvExport.php:115
+msgid "Non"
+msgstr ""
+
+#: includes/Admin/DeclarationsPage.php:50
+#: includes/Admin/DeclarationsPage.php:58
+#: includes/Admin/DeclarationsPage.php:285 includes/Admin/OrderMetaBox.php:50
+msgid "Rétractations"
+msgstr ""
+
+#. translators: 1 : référence, 2 : statut.
+#: includes/Admin/DeclarationsPage.php:150
+#, php-format
+msgid "Déclaration de rétractation %1$s : %2$s."
+msgstr ""
+
+#: includes/Admin/DeclarationsPage.php:241 includes/Admin/SettingsPage.php:103
+msgid "Vous n'avez pas les droits nécessaires pour accéder à cette page."
+msgstr ""
+
+#: includes/Admin/DeclarationsPage.php:286
+msgid "Exporter en CSV"
+msgstr ""
+
+#: includes/Admin/DeclarationsPage.php:287 includes/Admin/SettingsPage.php:69
+msgid "Réglages"
+msgstr ""
+
+#. translators: %d : nombre de déclarations.
+#: includes/Admin/DeclarationsPage.php:296
+#, php-format
+msgid "%d déclaration mise à jour."
+msgid_plural "%d déclarations mises à jour."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/DeclarationsPage.php:311
+msgid "Rechercher"
+msgstr ""
+
+#: includes/Admin/DeclarationsPage.php:334
+msgid "Déclaration introuvable."
+msgstr ""
+
+#: includes/Admin/ListTable.php:55 includes/Submission.php:223
+#: templates/admin/detail.php:137 templates/emails/ret10g-merchant.php:39
+msgid "Consommateur"
+msgstr ""
+
+#: includes/Admin/ListTable.php:84
+msgid "Marquer comme acceptée"
+msgstr ""
+
+#: includes/Admin/ListTable.php:85
+msgid "Marquer comme remboursée"
+msgstr ""
+
+#: includes/Admin/ListTable.php:86
+msgid "Marquer comme refusée"
+msgstr ""
+
+#: includes/Admin/ListTable.php:87
+msgid "Supprimer définitivement"
+msgstr ""
+
+#: includes/Admin/ListTable.php:107
+msgid "Toutes"
+msgstr ""
+
+#: includes/Admin/ListTable.php:181
+msgid "Aucune déclaration de rétractation pour le moment."
+msgstr ""
+
+#: includes/Admin/ListTable.php:210
+msgid "Détail"
+msgstr ""
+
+#: includes/Admin/ListTable.php:244
+msgid "hors délai"
+msgstr ""
+
+#. translators: %d : nombre d'articles.
+#: includes/Admin/ListTable.php:270
+#, php-format
+msgid "%d article"
+msgid_plural "%d articles"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Admin/OrderMetaBox.php:74
+msgid "Aucune déclaration pour cette commande."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:49
+msgid "Réglages de la rétractation"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:50 includes/Admin/SettingsPage.php:111
+msgid "Rétractation — réglages"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:116
+msgid ""
+"Aucune page de rétractation n'est configurée. Créez une page contenant le "
+"code court [retractation], puis sélectionnez-la ci-dessous."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:123
+msgid ""
+"Ce plugin met en œuvre la fonction de rétractation exigée à compter du 19 "
+"juin 2026 par l'article 11 bis de la directive (UE) 2011/83 modifiée, "
+"transposé en France aux articles L.221-21 et D.221-5 du code de la "
+"consommation."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:126
+msgid ""
+"Il ne collecte aucune donnée d'usage, n'affiche aucune publicité et "
+"n'appelle aucun service tiers, à l'exception facultative de la vérification "
+"des mises à jour sur GitHub."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:163
+msgid "Codes courts et bloc"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:165
+msgid "formulaire complet, à placer sur la page dédiée."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:166
+msgid "bouton renvoyant vers cette page, à placer où vous le souhaitez."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:167
+msgid "Bloc « Bouton de rétractation » disponible dans l'éditeur."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:191
+msgid "Activer"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:242
+msgid "— Aucune —"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:251
+msgid "Voir la page"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:257
+msgid "Créer la page automatiquement"
+msgstr ""
+
+#: includes/Core/Updater.php:261
+msgid "Aucune note de publication."
+msgstr ""
+
+#: includes/Declaration.php:54
+msgid "Reçue"
+msgstr ""
+
+#: includes/Declaration.php:55
+msgid "Acceptée"
+msgstr ""
+
+#: includes/Declaration.php:56
+msgid "Remboursée"
+msgstr ""
+
+#: includes/Declaration.php:57
+msgid "Refusée"
+msgstr ""
+
+#: includes/Eligibility.php:220
+msgid ""
+"Le statut actuel de cette commande ne permet pas de déposer une déclaration "
+"de rétractation en ligne."
+msgstr ""
+
+#: includes/Eligibility.php:224
+msgid ""
+"Aucun article de cette commande n'ouvre droit à rétractation, ou une "
+"déclaration a déjà été déposée pour la totalité des articles."
+msgstr ""
+
+#. translators: %s : date limite.
+#: includes/Eligibility.php:230
+#, php-format
+msgid "Le délai de rétractation de cette commande a expiré le %s."
+msgstr ""
+
+#: includes/Emails/Acknowledgement.php:36
+msgid "Rétractation — accusé de réception"
+msgstr ""
+
+#: includes/Emails/Acknowledgement.php:37
+msgid ""
+"Envoyé au consommateur immédiatement après le dépôt de sa déclaration de "
+"rétractation. Cet e-mail constitue l'accusé de réception sur support durable "
+"exigé par la réglementation : il est fortement déconseillé de le désactiver."
+msgstr ""
+
+#: includes/Emails/Acknowledgement.php:56
+msgid "Accusé de réception de votre rétractation ({reference})"
+msgstr ""
+
+#: includes/Emails/Acknowledgement.php:65
+msgid "Votre rétractation a bien été reçue"
+msgstr ""
+
+#: includes/Emails/MerchantNotification.php:33
+msgid "Rétractation — notification interne"
+msgstr ""
+
+#: includes/Emails/MerchantNotification.php:34
+msgid ""
+"Prévient la boutique qu'une déclaration de rétractation vient d'être déposée."
+msgstr ""
+
+#: includes/Emails/MerchantNotification.php:53
+msgid "[{site_title}] Rétractation reçue — commande #{order_number}"
+msgstr ""
+
+#: includes/Emails/MerchantNotification.php:62
+msgid "Nouvelle déclaration de rétractation"
+msgstr ""
+
+#: includes/Emails/MerchantNotification.php:125
+msgid "Destinataires"
+msgstr ""
+
+#. translators: %s : adresse par défaut.
+#: includes/Emails/MerchantNotification.php:129
+#, php-format
+msgid "Adresses séparées par des virgules. Par défaut : %s"
+msgstr ""
+
+#: includes/Frontend/Form.php:81
+msgid "Votre session a expiré. Merci de recommencer."
+msgstr ""
+
+#: includes/Frontend/Form.php:112
+msgid "Cette commande n'est pas accessible depuis votre compte."
+msgstr ""
+
+#: includes/Frontend/Form.php:147
+msgid ""
+"Cette demande n'a pas pu être authentifiée. Merci de recommencer depuis le "
+"début."
+msgstr ""
+
+#: includes/Frontend/OrderLookup.php:68
+msgid "Merci d'indiquer un numéro de commande et une adresse e-mail valides."
+msgstr ""
+
+#: includes/Frontend/OrderLookup.php:75
+msgid "Trop de tentatives. Merci de réessayer dans une quinzaine de minutes."
+msgstr ""
+
+#: includes/Frontend/OrderLookup.php:214
+msgid ""
+"Aucune commande ne correspond à ce numéro et à cette adresse e-mail. "
+"Vérifiez les informations figurant sur votre e-mail de confirmation de "
+"commande."
+msgstr ""
+
+#: includes/OrderStatus.php:47 includes/OrderStatus.php:71
+#: includes/OrderStatus.php:76
+msgctxt "Statut de commande"
+msgid "Rétractation demandée"
+msgstr ""
+
+#. translators: %s : nombre de commandes.
+#: includes/OrderStatus.php:53
+#, php-format
+msgid "Rétractation demandée <span class=\"count\">(%s)</span>"
+msgid_plural "Rétractation demandée <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/Settings.php:45
+msgid "Page de rétractation"
+msgstr ""
+
+#: includes/Settings.php:46
+msgid ""
+"Page contenant le code court [retractation]. Créée automatiquement à "
+"l'activation."
+msgstr ""
+
+#: includes/Settings.php:52
+msgid "Libellé du bouton"
+msgstr ""
+
+#: includes/Settings.php:53
+msgid ""
+"Doit être une formule dénuée d'ambiguïté (art. D.221-5). Formulations "
+"sûres : « Renoncer au contrat ici », « Se rétracter du contrat ici », "
+"« Exercer mon droit de rétractation »."
+msgstr ""
+
+#: includes/Settings.php:59
+msgid "Libellé du bouton de confirmation"
+msgstr ""
+
+#: includes/Settings.php:60
+msgid ""
+"Second bouton, exigé par l'article 11 bis de la directive (UE) 2011/83 "
+"modifiée."
+msgstr ""
+
+#: includes/Settings.php:66
+msgid "Texte d'introduction"
+msgstr ""
+
+#: includes/Settings.php:67
+msgid "Affiché en haut de la page de rétractation."
+msgstr ""
+
+#: includes/Settings.php:73
+msgid "Mention légale"
+msgstr ""
+
+#: includes/Settings.php:74
+msgid "Affichée sous le formulaire. Laisser vide pour ne rien afficher."
+msgstr ""
+
+#: includes/Settings.php:82
+msgid "Liste des commandes (Mon compte)"
+msgstr ""
+
+#: includes/Settings.php:83
+msgid "Ajoute le bouton en face de chaque commande éligible."
+msgstr ""
+
+#: includes/Settings.php:89
+msgid "Détail d'une commande (Mon compte)"
+msgstr ""
+
+#: includes/Settings.php:90
+msgid "Ajoute le bouton sous le détail de la commande."
+msgstr ""
+
+#: includes/Settings.php:96
+msgid "Lien permanent en pied de page"
+msgstr ""
+
+#: includes/Settings.php:97
+msgid ""
+"Recommandé : la fonction doit être « disponible en permanence » et "
+"« aisément accessible » pendant tout le délai de rétractation."
+msgstr ""
+
+#: includes/Settings.php:103
+msgid "Lien dans les e-mails WooCommerce"
+msgstr ""
+
+#: includes/Settings.php:104
+msgid "Ajoute le lien vers la page de rétractation au bas des e-mails client."
+msgstr ""
+
+#: includes/Settings.php:110
+msgid "Couleur de fond du bouton"
+msgstr ""
+
+#: includes/Settings.php:116
+msgid "Couleur du texte du bouton"
+msgstr ""
+
+#: includes/Settings.php:122
+msgid "Charger la feuille de style du plugin"
+msgstr ""
+
+#: includes/Settings.php:123
+msgid "Décocher pour styler entièrement depuis le thème."
+msgstr ""
+
+#: includes/Settings.php:133
+msgid "Délai de rétractation (jours)"
+msgstr ""
+
+#: includes/Settings.php:134
+msgid "Minimum légal : 14 jours. Vous pouvez offrir davantage."
+msgstr ""
+
+#: includes/Settings.php:144
+msgid "Point de départ du délai"
+msgstr ""
+
+#: includes/Settings.php:145
+msgid ""
+"Pour les biens, le délai court à compter de la réception. Le statut "
+"« Terminée » en est l'approximation la plus fidèle ; à défaut, la date de "
+"commande est utilisée."
+msgstr ""
+
+#: includes/Settings.php:153
+msgid "Jours de tolérance supplémentaires"
+msgstr ""
+
+#: includes/Settings.php:154
+msgid ""
+"Marge appliquée après le délai, pour absorber les écarts entre la date de "
+"livraison réelle et le statut de la commande."
+msgstr ""
+
+#: includes/Settings.php:160
+msgid "Statuts de commande concernés"
+msgstr ""
+
+#: includes/Settings.php:161
+msgid "Seules les commandes dans ces statuts affichent le bouton."
+msgstr ""
+
+#: includes/Settings.php:167
+msgid "Refuser les demandes hors délai"
+msgstr ""
+
+#: includes/Settings.php:168
+msgid ""
+"Déconseillé. Par défaut, une demande hors délai est enregistrée et signalée "
+"comme telle : c'est vous qui tranchez, et vous conservez la preuve de la "
+"demande."
+msgstr ""
+
+#: includes/Settings.php:174
+msgid "Exclure les produits virtuels ou téléchargeables"
+msgstr ""
+
+#: includes/Settings.php:175
+msgid ""
+"À n'activer que si le consommateur a expressément renoncé à son droit avant "
+"l'exécution (art. L.221-28 13°)."
+msgstr ""
+
+#: includes/Settings.php:181
+msgid "Produits exclus"
+msgstr ""
+
+#: includes/Settings.php:182
+msgid "Identifiants de produits séparés par des virgules."
+msgstr ""
+
+#: includes/Settings.php:188
+msgid "Catégories exclues"
+msgstr ""
+
+#: includes/Settings.php:189
+msgid "Identifiants de catégories de produits séparés par des virgules."
+msgstr ""
+
+#: includes/Settings.php:195
+msgid "Proposer un motif (facultatif)"
+msgstr ""
+
+#: includes/Settings.php:196
+msgid ""
+"Le motif ne peut jamais être rendu obligatoire : le droit de rétractation "
+"s'exerce sans justification."
+msgstr ""
+
+#: includes/Settings.php:204
+msgid "Changer le statut de la commande"
+msgstr ""
+
+#: includes/Settings.php:205
+msgid ""
+"Bascule la commande vers « Rétractation demandée » lorsque la déclaration "
+"porte sur la totalité de la commande."
+msgstr ""
+
+#: includes/Settings.php:211
+msgid "Destinataire des notifications"
+msgstr ""
+
+#: includes/Settings.php:212
+msgid ""
+"Adresses séparées par des virgules. Vide = adresse d'administration du site."
+msgstr ""
+
+#: includes/Settings.php:218
+msgid "Conserver l'adresse IP du déclarant"
+msgstr ""
+
+#: includes/Settings.php:219
+msgid ""
+"Non nécessaire à la conformité. À n'activer qu'avec une base légale et une "
+"mention dans votre politique de confidentialité."
+msgstr ""
+
+#: includes/Settings.php:227
+msgid "Purge automatique après (jours)"
+msgstr ""
+
+#: includes/Settings.php:228
+msgid ""
+"0 = aucune purge. Les déclarations servent de preuve : conserver au moins la "
+"durée de prescription applicable."
+msgstr ""
+
+#: includes/Settings.php:234
+msgid "Vérifier les mises à jour sur GitHub"
+msgstr ""
+
+#: includes/Settings.php:235
+msgid ""
+"Interroge api.github.com deux fois par jour pour connaître la dernière "
+"version publiée. Aucune donnée du site n'est transmise."
+msgstr ""
+
+#: includes/Settings.php:247
+msgid "Général"
+msgstr ""
+
+#: includes/Settings.php:248
+msgid "Affichage"
+msgstr ""
+
+#: includes/Settings.php:249
+msgid "Éligibilité"
+msgstr ""
+
+#: includes/Submission.php:37
+msgid "Merci d'indiquer vos nom et prénom."
+msgstr ""
+
+#: includes/Submission.php:41
+msgid ""
+"Merci d'indiquer une adresse e-mail valide pour recevoir votre accusé de "
+"réception."
+msgstr ""
+
+#: includes/Submission.php:45
+msgid "Merci de confirmer votre décision de vous rétracter avant de valider."
+msgstr ""
+
+#: includes/Submission.php:92
+msgid ""
+"Votre déclaration n'a pas pu être enregistrée. Merci de réessayer ou de nous "
+"contacter directement."
+msgstr ""
+
+#: includes/Submission.php:98
+msgid "Votre déclaration n'a pas pu être relue après enregistrement."
+msgstr ""
+
+#: includes/Submission.php:160 templates/form/declare.php:67
+msgid ""
+"Merci de sélectionner au moins un article sur lequel porte votre "
+"rétractation."
+msgstr ""
+
+#: includes/Submission.php:202
+msgid "DÉCLARATION DE RÉTRACTATION"
+msgstr ""
+
+#: includes/Submission.php:205
+msgid "Date et heure de l'envoi"
+msgstr ""
+
+#: includes/Submission.php:206
+msgid "Professionnel"
+msgstr ""
+
+#: includes/Submission.php:213
+msgid "Date de la commande"
+msgstr ""
+
+#: includes/Submission.php:219
+msgid "Date de réception (statut « Terminée »)"
+msgstr ""
+
+#: includes/Submission.php:224
+msgid "Moyen électronique choisi pour l'accusé de réception"
+msgstr ""
+
+#: includes/Submission.php:227
+msgid "Portée : totalité des articles encore susceptibles de rétractation."
+msgstr ""
+
+#: includes/Submission.php:228
+msgid "Portée : articles listés ci-dessous uniquement."
+msgstr ""
+
+#: includes/Submission.php:230
+msgid "Articles concernés :"
+msgstr ""
+
+#: includes/Submission.php:247
+msgid "Montant des articles concernés"
+msgstr ""
+
+#: includes/Submission.php:253
+msgid "Motif communiqué à titre facultatif"
+msgstr ""
+
+#: includes/Submission.php:257 templates/form/declare.php:172
+msgid ""
+"Je notifie par la présente ma rétractation du contrat portant sur la vente "
+"des biens ou la prestation des services désignés ci-dessus."
+msgstr ""
+
+#: includes/Submission.php:261
+msgid ""
+"Remarque : cette déclaration a été déposée après l'expiration du délai de "
+"rétractation calculé par la boutique. Elle a néanmoins été enregistrée et "
+"sera examinée."
+msgstr ""
+
+#. translators: 1 : référence, 2 : portée, 3 : montant.
+#: includes/Submission.php:286
+#, php-format
+msgid "Déclaration de rétractation %1$s reçue (%2$s), montant concerné : %3$s."
+msgstr ""
+
+#: includes/Submission.php:288 templates/emails/ret10g-merchant.php:41
+msgid "totalité de la commande"
+msgstr ""
+
+#: includes/Submission.php:288 templates/emails/ret10g-merchant.php:41
+msgid "articles sélectionnés"
+msgstr ""
+
+#: includes/Submission.php:293
+msgid "Attention : demande déposée hors délai."
+msgstr ""
+
+#. translators: %s : référence de la déclaration.
+#: includes/Submission.php:319
+#, php-format
+msgid "Rétractation demandée (%s)."
+msgstr ""
+
+#: templates/admin/detail.php:20
+msgid "Retour à la liste"
+msgstr ""
+
+#: templates/admin/detail.php:25
+msgid "Déclaration mise à jour."
+msgstr ""
+
+#: templates/admin/detail.php:31
+msgid ""
+"Cette déclaration a été déposée après l'expiration du délai calculé par la "
+"boutique. Vérifiez la date de livraison réelle avant de la refuser : le "
+"point de départ légal est la réception du bien par le consommateur."
+msgstr ""
+
+#: templates/admin/detail.php:38
+msgid "Contenu de la déclaration"
+msgstr ""
+
+#: templates/admin/detail.php:39
+msgid ""
+"Texte exact transmis au consommateur dans son accusé de réception. C'est "
+"cette version qui fait foi."
+msgstr ""
+
+#: templates/admin/detail.php:48
+msgid "Produit"
+msgstr ""
+
+#: templates/admin/detail.php:49
+msgid "UGS"
+msgstr ""
+
+#: templates/admin/detail.php:50 templates/form/declare.php:106
+msgid "Quantité"
+msgstr ""
+
+#: templates/admin/detail.php:78 templates/emails/ret10g-merchant.php:60
+msgid "Motif communiqué"
+msgstr ""
+
+#: templates/admin/detail.php:93
+msgid "Statut"
+msgstr ""
+
+#: templates/admin/detail.php:104
+msgid "Enregistrer"
+msgstr ""
+
+#: templates/admin/detail.php:111 templates/emails/ret10g-merchant.php:68
+msgid "Ouvrir la commande"
+msgstr ""
+
+#: templates/admin/detail.php:115
+msgid ""
+"Le remboursement s'effectue depuis la commande, avec les outils natifs de "
+"WooCommerce. Ce plugin ne déclenche jamais de remboursement automatique."
+msgstr ""
+
+#: templates/admin/detail.php:121
+msgid "Informations"
+msgstr ""
+
+#: templates/admin/detail.php:132
+msgid "non envoyé"
+msgstr ""
+
+#: templates/admin/detail.php:141 templates/emails/ret10g-merchant.php:40
+msgid "Adresse e-mail"
+msgstr ""
+
+#: templates/admin/detail.php:153
+msgid "Date limite calculée"
+msgstr ""
+
+#: templates/admin/detail.php:163
+msgid "Adresse IP"
+msgstr ""
+
+#. translators: %s : prénom du consommateur.
+#: templates/emails/plain/ret10g-acknowledgement.php:18
+#: templates/emails/ret10g-acknowledgement.php:23
+#, php-format
+msgid "Bonjour %s,"
+msgstr ""
+
+#. translators: 1 : date et heure, 2 : numéro de commande.
+#: templates/emails/plain/ret10g-acknowledgement.php:24
+#: templates/emails/ret10g-acknowledgement.php:33
+#, php-format
+msgid ""
+"Nous accusons réception de votre déclaration de rétractation, envoyée le "
+"%1$s et portant sur la commande n° %2$s."
+msgstr ""
+
+#: templates/emails/plain/ret10g-acknowledgement.php:29
+#: templates/emails/ret10g-acknowledgement.php:41
+msgid ""
+"Conservez cet e-mail : il constitue la preuve du contenu de votre "
+"déclaration ainsi que de sa date et de son heure d'envoi."
+msgstr ""
+
+#: templates/emails/plain/ret10g-acknowledgement.php:35
+#: templates/emails/ret10g-acknowledgement.php:53
+msgid ""
+"Nous vous rembourserons l'ensemble des sommes versées, y compris les frais "
+"de livraison standard, au plus tard 14 jours après avoir été informés de "
+"votre décision. Nous pouvons différer ce remboursement jusqu'à la "
+"récupération des biens ou jusqu'à ce que vous ayez fourni une preuve de leur "
+"expédition."
+msgstr ""
+
+#: templates/emails/plain/ret10g-acknowledgement.php:36
+#: templates/emails/ret10g-acknowledgement.php:57
+msgid ""
+"Vous devez nous renvoyer les biens sans retard excessif, et au plus tard 14 "
+"jours après l'envoi de cette déclaration."
+msgstr ""
+
+#. translators: 1 : référence, 2 : numéro de commande.
+#: templates/emails/plain/ret10g-merchant.php:18
+#: templates/emails/ret10g-merchant.php:25
+#, php-format
+msgid "La déclaration %1$s vient d'être déposée pour la commande n° %2$s."
+msgstr ""
+
+#: templates/emails/plain/ret10g-merchant.php:24
+msgid "Attention : déclaration déposée hors du délai calculé par la boutique."
+msgstr ""
+
+#: templates/emails/ret10g-acknowledgement.php:44
+#: templates/form/confirmed.php:46
+msgid "Contenu de votre déclaration"
+msgstr ""
+
+#: templates/emails/ret10g-acknowledgement.php:50
+msgid "Et maintenant ?"
+msgstr ""
+
+#: templates/emails/ret10g-merchant.php:34
+msgid ""
+"Attention : cette déclaration a été déposée après l'expiration du délai "
+"calculé par la boutique. Vérifiez la date de livraison réelle avant de "
+"refuser."
+msgstr ""
+
+#: templates/emails/ret10g-merchant.php:42 templates/form/confirmed.php:41
+msgid "Montant concerné"
+msgstr ""
+
+#: templates/emails/ret10g-merchant.php:65
+msgid "Ouvrir la déclaration"
+msgstr ""
+
+#: templates/form/blocked.php:22
+msgid "Revenir au début"
+msgstr ""
+
+#: templates/form/confirmed.php:15
+msgid "Votre rétractation a bien été enregistrée"
+msgstr ""
+
+#. translators: %s : adresse e-mail.
+#: templates/form/confirmed.php:20
+#, php-format
+msgid ""
+"Un accusé de réception vient d'être envoyé à %s. Conservez-le : il fait foi "
+"de la date et de l'heure de votre déclaration."
+msgstr ""
+
+#: templates/form/confirmed.php:33
+msgid "Date et heure"
+msgstr ""
+
+#: templates/form/confirmed.php:51
+msgid "Déposer une autre déclaration"
+msgstr ""
+
+#. translators: %s : date limite.
+#: templates/form/declare.php:37
+#, php-format
+msgid ""
+"Le délai de rétractation calculé pour cette commande a expiré le %s. Vous "
+"pouvez tout de même déposer votre déclaration : elle sera enregistrée, "
+"horodatée et examinée."
+msgstr ""
+
+#: templates/form/declare.php:45
+msgid "Contrat concerné"
+msgstr ""
+
+#: templates/form/declare.php:52
+msgid "Date"
+msgstr ""
+
+#: templates/form/declare.php:56
+msgid "Total"
+msgstr ""
+
+#: templates/form/declare.php:60
+msgid "Date limite de rétractation"
+msgstr ""
+
+#: templates/form/declare.php:74
+msgid "Articles sur lesquels porte votre rétractation"
+msgstr ""
+
+#: templates/form/declare.php:78
+msgid "Tout sélectionner"
+msgstr ""
+
+#: templates/form/declare.php:81
+msgid "Tout désélectionner"
+msgstr ""
+
+#. translators: %d : quantité commandée.
+#: templates/form/declare.php:123
+#, php-format
+msgid "sur %d"
+msgstr ""
+
+#: templates/form/declare.php:135
+msgid "Vos coordonnées"
+msgstr ""
+
+#: templates/form/declare.php:150
+msgid "Adresse e-mail à laquelle envoyer l'accusé de réception"
+msgstr ""
+
+#: templates/form/declare.php:157
+msgid "Motif (facultatif)"
+msgstr ""
+
+#: templates/form/declare.php:161
+msgid ""
+"Vous n'avez pas à motiver votre décision. Ce champ nous aide simplement à "
+"améliorer nos produits."
+msgstr ""
+
+#: templates/form/declare.php:184
+msgid ""
+"Un accusé de réception horodaté vous sera envoyé immédiatement à l'adresse "
+"indiquée ci-dessus."
+msgstr ""
+
+#: templates/form/lookup.php:31
+msgid "Vos commandes concernées"
+msgstr ""
+
+#. translators: %s : date limite.
+#: templates/form/lookup.php:49
+#, php-format
+msgid "Jusqu'au %s"
+msgstr ""
+
+#: templates/form/lookup.php:74
+msgid "Retrouver votre commande"
+msgstr ""
+
+#: templates/form/lookup.php:75
+msgid "Une autre commande ?"
+msgstr ""
+
+#: templates/form/lookup.php:80
+msgid ""
+"Aucun compte n'est nécessaire : indiquez le numéro de commande et l'adresse "
+"e-mail utilisée lors de l'achat."
+msgstr ""
+
+#: templates/form/lookup.php:88
+msgid "Numéro de commande"
+msgstr ""
+
+#: templates/form/lookup.php:99
+msgid "Adresse e-mail de la commande"
+msgstr ""
+
+#: templates/form/lookup.php:110
+msgid "Continuer"
+msgstr ""

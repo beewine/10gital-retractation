@@ -1,0 +1,28 @@
+name: Évolution
+description: Proposer une amélioration ou une nouvelle fonctionnalité
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Le besoin
+      description: Quel problème concret cette évolution résout-elle, et pour qui ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Piste envisagée
+      description: Facultatif.
+
+  - type: dropdown
+    id: legal
+    attributes:
+      label: Enjeu de conformité ?
+      options:
+        - "Non — confort ou ergonomie"
+        - "Oui — exigence réglementaire"
+        - "À vérifier"
+    validations:
+      required: true
