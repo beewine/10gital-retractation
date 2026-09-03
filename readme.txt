@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 10.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,29 @@ Non, les déclarations sont conservées : elles constituent une preuve. Pour tou
 
 Il met en œuvre les exigences techniques du texte. Vos CGV, votre information précontractuelle et votre politique de remboursement relèvent de votre conseil juridique.
 
+== External Services ==
+
+Le fonctionnement du plugin ne fait appel à **aucun service externe**. Les déclarations de rétractation sont enregistrées dans la base de données de votre site et n'en sortent jamais.
+
+La seule requête sortante possible est la vérification des mises à jour :
+
+* **Service :** GitHub (api.github.com), opéré par GitHub, Inc.
+* **Quand :** deux fois par jour au maximum, uniquement dans l'administration.
+* **Ce qui est envoyé :** rien d'autre que la requête elle-même. Aucune donnée de commande, de client, de configuration, ni l'adresse du site. Il s'agit d'une lecture publique de la dernière version publiée du plugin.
+* **Comment la désactiver :** décocher « Vérifier les mises à jour sur GitHub » dans les réglages, ou définir `define( 'RET10G_DISABLE_UPDATER', true );` dans wp-config.php.
+* Conditions de GitHub : https://docs.github.com/site-policy/github-terms/github-terms-of-service — Confidentialité : https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+
+== Données personnelles ==
+
+Le plugin enregistre, pour chaque déclaration : nom, prénom, adresse e-mail de contact, commande concernée, articles et quantités, motif éventuel, date et heure. L'adresse IP n'est enregistrée que si vous activez explicitement ce réglage.
+
+**Vous êtes seul responsable de ce traitement.** 10gital, éditeur de l'extension, n'a aucun accès à ces données et n'en reçoit aucune copie : il n'a donc pas à figurer dans votre politique de confidentialité. Le plugin vous propose en revanche une section prête à adapter dans Réglages → Confidentialité.
+
 == Changelog ==
+
+= 1.0.2 =
+* Précision : le marchand est seul responsable du traitement des déclarations ; 10gital, éditeur de l'extension, n'y a aucun accès et n'a pas à figurer dans sa politique de confidentialité.
+* Ajout des sections « External Services » et « Données personnelles ».
 
 = 1.0.1 =
 * Correction : l'aperçu et l'envoi de test des e-mails depuis les réglages WooCommerce échouaient.

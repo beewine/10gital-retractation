@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.1\n"
+"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -223,74 +223,95 @@ msgid ""
 "des mises à jour sur GitHub."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:163
-msgid "Codes courts et bloc"
-msgstr ""
-
-#: includes/Admin/SettingsPage.php:165
-msgid "formulaire complet, à placer sur la page dédiée."
+#: includes/Admin/SettingsPage.php:129
+msgid ""
+"Les déclarations de vos clients sont enregistrées dans la base de votre site "
+"et n'en sortent pas : 10gital, éditeur de l'extension, n'y a aucun accès. "
+"C'est donc à vous, et à vous seul, de compléter votre politique de "
+"confidentialité — une section vous y est suggérée dans Réglages → "
+"Confidentialité."
 msgstr ""
 
 #: includes/Admin/SettingsPage.php:166
+msgid "Codes courts et bloc"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:168
+msgid "formulaire complet, à placer sur la page dédiée."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:169
 msgid "bouton renvoyant vers cette page, à placer où vous le souhaitez."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:167
+#: includes/Admin/SettingsPage.php:170
 msgid "Bloc « Bouton de rétractation » disponible dans l'éditeur."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:191
+#: includes/Admin/SettingsPage.php:194
 msgid "Activer"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:242
+#: includes/Admin/SettingsPage.php:245
 msgid "— Aucune —"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:251
+#: includes/Admin/SettingsPage.php:254
 msgid "Voir la page"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:257
+#: includes/Admin/SettingsPage.php:260
 msgid "Créer la page automatiquement"
 msgstr ""
 
 #. translators: %d : nombre de jours.
-#: includes/Core/Privacy.php:47
+#: includes/Core/Privacy.php:50
 #, php-format
 msgid ""
-"Ces données sont supprimées automatiquement %d jours après le dépôt de la "
+"Ces données sont supprimées automatiquement %d jours après le dépôt de votre "
 "déclaration."
-msgstr ""
-
-#: includes/Core/Privacy.php:50
-msgid ""
-"Ces données sont conservées sans limite de durée configurée : elles "
-"constituent la preuve de la déclaration. Définissez une durée de purge "
-"adaptée à votre politique de conservation."
 msgstr ""
 
 #: includes/Core/Privacy.php:53
 msgid ""
-"L'adresse IP du déclarant est également enregistrée, sur décision du "
-"responsable de traitement."
-msgstr ""
-
-#: includes/Core/Privacy.php:54
-msgid "Aucune adresse IP n'est enregistrée."
+"Ces données sont conservées le temps nécessaire à la preuve de votre "
+"déclaration et au respect des délais de prescription applicables."
 msgstr ""
 
 #: includes/Core/Privacy.php:57
+msgid ""
+"Aucune durée de purge n'est configurée pour le moment : indiquez dans votre "
+"politique la durée que vous appliquez réellement, ou définissez une purge "
+"automatique dans les réglages de l'extension."
+msgstr ""
+
+#: includes/Core/Privacy.php:60
+msgid "Votre adresse IP est également enregistrée, à seule fin de preuve."
+msgstr ""
+
+#: includes/Core/Privacy.php:61
+msgid "Aucune adresse IP n'est enregistrée."
+msgstr ""
+
+#: includes/Core/Privacy.php:67
 msgid ""
 "Section suggérée par l'extension 10gital Rétractation. Adaptez-la à votre "
 "situation avant publication."
 msgstr ""
 
-#: includes/Core/Privacy.php:59
+#: includes/Core/Privacy.php:69
+msgid ""
+"Vous êtes seul responsable du traitement de ces données : elles sont "
+"enregistrées dans la base de votre propre site et n'en sortent pas. 10gital, "
+"éditeur de l'extension, n'y a aucun accès, n'en reçoit aucune copie et n'a "
+"donc pas à figurer dans votre politique de confidentialité."
+msgstr ""
+
+#: includes/Core/Privacy.php:73
 msgid "Déclarations de rétractation"
 msgstr ""
 
-#: includes/Core/Privacy.php:60
+#: includes/Core/Privacy.php:74
 msgid ""
 "Lorsque vous exercez votre droit de rétractation depuis notre site, nous "
 "enregistrons : vos nom et prénom, l'adresse e-mail que vous indiquez pour "
@@ -299,15 +320,15 @@ msgid ""
 "de communiquer, ainsi que la date et l'heure de votre déclaration."
 msgstr ""
 
-#: includes/Core/Privacy.php:62
+#: includes/Core/Privacy.php:76
 msgid ""
 "Ces informations sont nécessaires au traitement de votre rétractation et à "
 "la preuve de son dépôt, conformément aux articles L.221-21 et suivants du "
-"code de la consommation. Elles ne sont transmises à aucun tiers et ne "
-"servent à aucune finalité commerciale."
+"code de la consommation. Elles restent hébergées avec notre site, ne sont "
+"transmises à aucun tiers et ne servent à aucune finalité commerciale."
 msgstr ""
 
-#: includes/Core/Privacy.php:66
+#: includes/Core/Privacy.php:80
 msgid "10gital Rétractation"
 msgstr ""
 

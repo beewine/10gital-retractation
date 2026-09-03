@@ -3,6 +3,17 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/)
 et le versionnage sémantique.
 
+## [1.0.2] — 2026-09-03
+
+### Modifié
+
+- **Partage des responsabilités rendu explicite.** La section suggérée pour la politique de confidentialité indique désormais, dans la partie destinée à l'administrateur du site, que le marchand est seul responsable du traitement : les déclarations restent dans la base de son site, et 10gital, éditeur de l'extension, n'y a aucun accès, n'en reçoit aucune copie et n'a donc pas à figurer dans sa politique de confidentialité. Même précision sur l'écran de réglages.
+- Mention de l'adresse IP reformulée à destination du consommateur plutôt qu'en vocabulaire de responsable de traitement.
+
+### Ajouté
+
+- Sections « External Services » et « Données personnelles » dans `readme.txt` : le fonctionnement du plugin n'appelle aucun service externe ; seule la vérification facultative des mises à jour interroge GitHub, sans transmettre la moindre donnée du site.
+
 ## [1.0.1] — 2026-09-03
 
 Corrections issues d'une revue des retours clients du plugin dont celui-ci s'inspire.

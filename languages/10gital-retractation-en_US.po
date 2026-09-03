@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/"
 "issues\n"
-"POT-Creation-Date: 2026-09-03 20:08+0200\n"
+"POT-Creation-Date: 2026-09-03 20:29+0200\n"
 "PO-Revision-Date: 2026-09-03 00:00+0000\n"
 "Last-Translator: 10gital <contact@10gital.fr>\n"
 "Language-Team: English (United States)\n"
@@ -231,91 +231,137 @@ msgstr ""
 "It collects no usage data, displays no advertising and calls no third-party "
 "service, apart from the optional update check on GitHub."
 
-#: includes/Admin/SettingsPage.php:163
+#: includes/Admin/SettingsPage.php:129
+msgid ""
+"Les déclarations de vos clients sont enregistrées dans la base de votre site "
+"et n'en sortent pas : 10gital, éditeur de l'extension, n'y a aucun accès. "
+"C'est donc à vous, et à vous seul, de compléter votre politique de "
+"confidentialité — une section vous y est suggérée dans Réglages → "
+"Confidentialité."
+msgstr ""
+"Your customers' declarations are stored in your own site's database and "
+"never leave it: 10gital, the plugin's publisher, has no access to them. "
+"Completing your privacy policy is therefore yours alone to do, and a "
+"suggested section is waiting for you under Settings → Privacy."
+
+#: includes/Admin/SettingsPage.php:166
 msgid "Codes courts et bloc"
 msgstr "Shortcodes and block"
 
-#: includes/Admin/SettingsPage.php:165
+#: includes/Admin/SettingsPage.php:168
 msgid "formulaire complet, à placer sur la page dédiée."
 msgstr "full form, to be placed on the dedicated page."
 
-#: includes/Admin/SettingsPage.php:166
+#: includes/Admin/SettingsPage.php:169
 msgid "bouton renvoyant vers cette page, à placer où vous le souhaitez."
 msgstr "button linking to that page, to be placed wherever you like."
 
-#: includes/Admin/SettingsPage.php:167
+#: includes/Admin/SettingsPage.php:170
 msgid "Bloc « Bouton de rétractation » disponible dans l'éditeur."
 msgstr "A “Withdrawal button” block is available in the editor."
 
-#: includes/Admin/SettingsPage.php:191
+#: includes/Admin/SettingsPage.php:194
 msgid "Activer"
 msgstr "Enable"
 
-#: includes/Admin/SettingsPage.php:242
+#: includes/Admin/SettingsPage.php:245
 msgid "— Aucune —"
 msgstr "— None —"
 
-#: includes/Admin/SettingsPage.php:251
+#: includes/Admin/SettingsPage.php:254
 msgid "Voir la page"
 msgstr "View the page"
 
-#: includes/Admin/SettingsPage.php:257
+#: includes/Admin/SettingsPage.php:260
 msgid "Créer la page automatiquement"
 msgstr "Create the page automatically"
 
 #. translators: %d : nombre de jours.
-#: includes/Core/Privacy.php:47
+#: includes/Core/Privacy.php:50
 #, php-format
 msgid ""
-"Ces données sont supprimées automatiquement %d jours après le dépôt de la "
+"Ces données sont supprimées automatiquement %d jours après le dépôt de votre "
 "déclaration."
-msgstr "This data is deleted automatically %d days after the declaration is submitted."
-
-#: includes/Core/Privacy.php:50
-msgid ""
-"Ces données sont conservées sans limite de durée configurée : elles "
-"constituent la preuve de la déclaration. Définissez une durée de purge "
-"adaptée à votre politique de conservation."
-msgstr "This data is kept with no configured time limit: it constitutes proof of the declaration. Set a purge period in line with your retention policy."
+msgstr ""
+"This data is deleted automatically %d days after your declaration is "
+"submitted."
 
 #: includes/Core/Privacy.php:53
 msgid ""
-"L'adresse IP du déclarant est également enregistrée, sur décision du "
-"responsable de traitement."
-msgstr "The declarant's IP address is also recorded, at the controller's decision."
-
-#: includes/Core/Privacy.php:54
-msgid "Aucune adresse IP n'est enregistrée."
-msgstr "No IP address is recorded."
+"Ces données sont conservées le temps nécessaire à la preuve de votre "
+"déclaration et au respect des délais de prescription applicables."
+msgstr ""
+"This data is kept for as long as is necessary to prove your declaration and "
+"to comply with the applicable limitation periods."
 
 #: includes/Core/Privacy.php:57
 msgid ""
+"Aucune durée de purge n'est configurée pour le moment : indiquez dans votre "
+"politique la durée que vous appliquez réellement, ou définissez une purge "
+"automatique dans les réglages de l'extension."
+msgstr ""
+"No purge period is currently configured: state in your policy the period you "
+"actually apply, or set an automatic purge in the plugin settings."
+
+#: includes/Core/Privacy.php:60
+msgid "Votre adresse IP est également enregistrée, à seule fin de preuve."
+msgstr "Your IP address is also recorded, solely as evidence."
+
+#: includes/Core/Privacy.php:61
+msgid "Aucune adresse IP n'est enregistrée."
+msgstr "No IP address is recorded."
+
+#: includes/Core/Privacy.php:67
+msgid ""
 "Section suggérée par l'extension 10gital Rétractation. Adaptez-la à votre "
 "situation avant publication."
-msgstr "Suggested section from the 10gital Withdrawal plugin. Adapt it to your situation before publishing."
+msgstr ""
+"Suggested section from the 10gital Withdrawal plugin. Adapt it to your "
+"situation before publishing."
 
-#: includes/Core/Privacy.php:59
+#: includes/Core/Privacy.php:69
+msgid ""
+"Vous êtes seul responsable du traitement de ces données : elles sont "
+"enregistrées dans la base de votre propre site et n'en sortent pas. 10gital, "
+"éditeur de l'extension, n'y a aucun accès, n'en reçoit aucune copie et n'a "
+"donc pas à figurer dans votre politique de confidentialité."
+msgstr ""
+"You alone are the controller of this data: it is stored in your own site's "
+"database and never leaves it. 10gital, the plugin's publisher, has no access "
+"to it, receives no copy of it, and therefore does not belong in your privacy "
+"policy."
+
+#: includes/Core/Privacy.php:73
 msgid "Déclarations de rétractation"
 msgstr "Withdrawal declarations"
 
-#: includes/Core/Privacy.php:60
+#: includes/Core/Privacy.php:74
 msgid ""
 "Lorsque vous exercez votre droit de rétractation depuis notre site, nous "
 "enregistrons : vos nom et prénom, l'adresse e-mail que vous indiquez pour "
 "recevoir l'accusé de réception, l'identification de la commande concernée, "
 "les articles et quantités visés, le motif que vous choisissez éventuellement "
 "de communiquer, ainsi que la date et l'heure de votre déclaration."
-msgstr "When you exercise your right of withdrawal on our site, we record: your first and last name, the email address you give to receive the acknowledgement of receipt, the identification of the order concerned, the items and quantities involved, any reason you choose to give, and the date and time of your declaration."
+msgstr ""
+"When you exercise your right of withdrawal on our site, we record: your "
+"first and last name, the email address you give to receive the "
+"acknowledgement of receipt, the identification of the order concerned, the "
+"items and quantities involved, any reason you choose to give, and the date "
+"and time of your declaration."
 
-#: includes/Core/Privacy.php:62
+#: includes/Core/Privacy.php:76
 msgid ""
 "Ces informations sont nécessaires au traitement de votre rétractation et à "
 "la preuve de son dépôt, conformément aux articles L.221-21 et suivants du "
-"code de la consommation. Elles ne sont transmises à aucun tiers et ne "
-"servent à aucune finalité commerciale."
-msgstr "This information is necessary to process your withdrawal and to prove that it was submitted, in accordance with Article L.221-21 et seq. of the French Consumer Code. It is not passed on to any third party and is not used for any commercial purpose."
+"code de la consommation. Elles restent hébergées avec notre site, ne sont "
+"transmises à aucun tiers et ne servent à aucune finalité commerciale."
+msgstr ""
+"This information is necessary to process your withdrawal and to prove that "
+"it was submitted, in accordance with Article L.221-21 et seq. of the French "
+"Consumer Code. It stays hosted with our site, is not passed on to any third "
+"party, and is not used for any commercial purpose."
 
-#: includes/Core/Privacy.php:66
+#: includes/Core/Privacy.php:80
 msgid "10gital Rétractation"
 msgstr "10gital Withdrawal"
 
@@ -351,7 +397,9 @@ msgstr "The product does not meet my needs."
 msgid ""
 "Aperçu : le contenu intégral de la déclaration du consommateur figure ici, "
 "avec sa date et son heure d'envoi."
-msgstr "Preview: the consumer's full declaration appears here, together with its date and time of submission."
+msgstr ""
+"Preview: the consumer's full declaration appears here, together with its "
+"date and time of submission."
 
 #: includes/Eligibility.php:220
 msgid ""

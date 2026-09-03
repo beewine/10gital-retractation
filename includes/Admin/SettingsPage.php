@@ -125,6 +125,9 @@ class SettingsPage {
 				<p>
 					<?php esc_html_e( 'Il ne collecte aucune donnée d\'usage, n\'affiche aucune publicité et n\'appelle aucun service tiers, à l\'exception facultative de la vérification des mises à jour sur GitHub.', '10gital-retractation' ); ?>
 				</p>
+				<p>
+					<?php esc_html_e( 'Les déclarations de vos clients sont enregistrées dans la base de votre site et n\'en sortent pas : 10gital, éditeur de l\'extension, n\'y a aucun accès. C\'est donc à vous, et à vous seul, de compléter votre politique de confidentialité — une section vous y est suggérée dans Réglages → Confidentialité.', '10gital-retractation' ); ?>
+				</p>
 			</div>
 
 			<form method="post" action="options.php">

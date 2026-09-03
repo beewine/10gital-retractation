@@ -46,6 +46,18 @@ Elle se désactive dans les réglages, ou définitivement :
 define( 'RET10G_DISABLE_UPDATER', true );
 ```
 
+### Qui est responsable de quoi
+
+Les déclarations sont enregistrées dans la base du site marchand et n'en sortent
+pas. **10gital, en tant qu'éditeur, n'y a aucun accès et n'en reçoit aucune copie** :
+il n'y a donc rien à déclarer au sujet de l'éditeur dans la politique de
+confidentialité du site.
+
+Le responsable de traitement est le marchand qui installe le plugin. C'est à lui
+de compléter sa politique de confidentialité, et le plugin lui propose pour cela
+une section prête à adapter dans **Réglages → Confidentialité**, dont le texte
+s'ajuste selon la durée de purge et la conservation ou non de l'adresse IP.
+
 ## Installation
 
 1. Téléchargez `10gital-retractation.zip` depuis la [dernière publication](https://github.com/beewine/10gital-retractation/releases/latest).
