@@ -1,0 +1,13 @@
+<wpml-config>
+	<!--
+		Textes des réglages affichés aux visiteurs. WPML (String Translation) et
+		Polylang les proposent à la traduction lorsqu'ils ont été personnalisés ;
+		restés sur leur valeur d'origine, ils sont traduits par le catalogue du plugin.
+	-->
+	<admin-texts>
+		<key name="ret10g_button_label" />
+		<key name="ret10g_confirm_label" />
+		<key name="ret10g_intro_text" />
+		<key name="ret10g_legal_notice" />
+	</admin-texts>
+</wpml-config>

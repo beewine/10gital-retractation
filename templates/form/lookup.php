@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php endif; ?>
 
 	<?php if ( ! empty( $orders ) ) : ?>
-		<section class="ret10g__section">
+		<div class="ret10g__section">
 			<h2 class="ret10g__title"><?php esc_html_e( 'Vos commandes concernées', '10gital-retractation' ); ?></h2>
 
 			<ul class="ret10g__orders">
@@ -64,10 +64,10 @@ defined( 'ABSPATH' ) || exit;
 					</li>
 				<?php endforeach; ?>
 			</ul>
-		</section>
+		</div>
 	<?php endif; ?>
 
-	<section class="ret10g__section">
+	<div class="ret10g__section">
 		<h2 class="ret10g__title">
 			<?php
 			echo empty( $orders )
@@ -110,7 +110,7 @@ defined( 'ABSPATH' ) || exit;
 				<button type="submit" class="ret10g__button"><?php esc_html_e( 'Continuer', '10gital-retractation' ); ?></button>
 			</p>
 		</form>
-	</section>
+	</div>
 
 	<?php if ( '' !== trim( $notice ) ) : ?>
 		<div class="ret10g__notice"><?php echo wp_kses_post( wpautop( $notice ) ); ?></div>

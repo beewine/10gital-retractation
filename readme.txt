@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 10.0
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,14 @@ Le plugin enregistre, pour chaque déclaration : nom, prénom, adresse e-mail de
 **Vous êtes seul responsable de ce traitement.** 10gital, éditeur de l'extension, n'a aucun accès à ces données et n'en reçoit aucune copie : il n'a donc pas à figurer dans votre politique de confidentialité. Le plugin vous propose en revanche une section prête à adapter dans Réglages → Confidentialité.
 
 == Changelog ==
+
+= 1.1.0 =
+* Correction : sur un site multilingue (WPML, Polylang), le bouton, le lien de pied de page et les e-mails renvoyaient tous vers une seule version de la page de rétractation. Ils pointent désormais vers la page dans la langue du visiteur, ou du client pour les e-mails.
+* Correction : les textes par défaut (introduction, mention légale, libellés des boutons) restaient en français sur les versions étrangères du site. Ils sont traduits ; un texte personnalisé se traduit avec WPML ou Polylang (wpml-config.xml fourni).
+* Correction : la page créée à l'activation prenait la langue affichée dans l'administration. Elle est créée dans la langue par défaut, puis traduite dans chaque langue active ; un bouton des réglages crée les traductions manquantes.
+* Correction : les exclusions par produit ou par catégorie s'appliquent aussi aux traductions des produits et des catégories exclus.
+* Correction d'affichage : le formulaire n'utilise plus de balises <section>, que certains thèmes affichent en plein écran ; styles durcis, mode sombre automatique retiré.
+* Ajout : code court [lien_retractation], simple lien texte pour le pied de page ou un menu du thème.
 
 = 1.0.2 =
 * Précision : le marchand est seul responsable du traitement des déclarations ; 10gital, éditeur de l'extension, n'y a aucun accès et n'a pas à figurer dans sa politique de confidentialité.

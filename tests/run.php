@@ -9,6 +9,7 @@ require __DIR__ . '/bootstrap.php';
 
 use Dixgital\Retractation\Declaration;
 use Dixgital\Retractation\Eligibility;
+use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Security;
 use Dixgital\Retractation\Settings;
 use Dixgital\Retractation\Submission;
@@ -216,6 +217,76 @@ check( 'Couleur valide conservée', '#abcdef', Settings::sanitize( '#abcdef', $s
 check( 'Liste d\'identifiants normalisée', array( 12, 34, 56 ), Settings::sanitize( '12, 34,56, 12', $schema['excluded_products'] ) );
 check( 'Choix de liste invalide replacé par défaut', 'completed', Settings::sanitize( 'jamais', $schema['period_start'] ) );
 check( 'Statuts inconnus filtrés', array( 'processing' ), Settings::sanitize( array( 'processing', 'inexistant', 'cancelled' ), $schema['allowed_statuses'] ) );
+
+// --- Textes traduisibles ---------------------------------------------------.
+//
+// Les valeurs par défaut sont écrites deux fois : dans le schéma (valeur
+// enregistrée) et dans translated_default() (chaîne extraite par gettext).
+// Si elles divergent, le site anglais retombe sur le texte français.
+
+foreach ( Settings::TRANSLATABLE as $key ) {
+	check( "Défaut de « $key » identique dans le schéma et dans translated_default()", $schema[ $key ]['default'], Settings::translated_default( $key ) );
+}
+
+$GLOBALS['ret10g_translations'] = array(
+	$schema['intro_text']['default']   => 'You have 14 days to withdraw from your order.',
+	$schema['legal_notice']['default'] => 'Some goods are excluded from the right of withdrawal.',
+	$schema['button_label']['default'] => 'Exercise my right of withdrawal',
+);
+
+check( 'Texte par défaut non enregistré : servi traduit', 'You have 14 days to withdraw from your order.', Settings::get( 'intro_text' ) );
+
+$GLOBALS['ret10g_options']['ret10g_legal_notice'] = $schema['legal_notice']['default'];
+check( 'Texte par défaut enregistré tel quel : servi traduit', 'Some goods are excluded from the right of withdrawal.', Settings::get( 'legal_notice' ) );
+
+$GLOBALS['ret10g_options']['ret10g_legal_notice'] = str_replace( ' (biens', "\r\n(biens", $schema['legal_notice']['default'] ) . "\n";
+check( 'Texte par défaut réenregistré avec d\'autres espaces : servi traduit', 'Some goods are excluded from the right of withdrawal.', Settings::get( 'legal_notice' ) );
+
+$GLOBALS['ret10g_options']['ret10g_button_label'] = 'Me rétracter';
+check( 'Libellé personnalisé : conservé tel quel', 'Me rétracter', Settings::get( 'button_label' ) );
+check( 'Valeur brute : jamais traduite', 'Me rétracter', Settings::raw( 'button_label' ) );
+
+$GLOBALS['ret10g_options']['ret10g_legal_notice'] = '';
+check( 'Mention volontairement vidée : reste vide', '', Settings::get( 'legal_notice' ) );
+
+check( 'Valeur brute d\'un texte par défaut : en français', $schema['intro_text']['default'], Settings::raw( 'intro_text' ) );
+
+$GLOBALS['ret10g_translations'] = array();
+unset( $GLOBALS['ret10g_options']['ret10g_button_label'], $GLOBALS['ret10g_options']['ret10g_legal_notice'] );
+Settings::flush_cache();
+
+// --- Multilingue -----------------------------------------------------------.
+
+check( 'Sans extension multilingue, un identifiant reste inchangé', 9100, Multilingual::translate_id( 9100, 'product' ) );
+check( 'Sans extension multilingue, pas de variante supplémentaire', array( 9100 ), Multilingual::with_originals( array( 9100 ), 'product' ) );
+check( 'Sans extension multilingue, aucune traduction manquante', array(), Multilingual::missing_translations( 42 ) );
+
+// Site français + anglais : le produit anglais 9100 traduit le français 9098.
+$GLOBALS['ret10g_test_filters']['wpml_default_language'] = static function () { return 'fr'; };
+$GLOBALS['ret10g_test_filters']['wpml_object_id']        = static function ( $id, $type = '', $original = false, $lang = null ) {
+	$map = array( 'product' => array( 9100 => 9098 ), 'page' => array( 42 => 42 ) );
+
+	if ( 'fr' === $lang ) {
+		return $map[ $type ][ $id ] ?? $id;
+	}
+
+	return $id;
+};
+
+$GLOBALS['ret10g_options']['ret10g_excluded_products'] = array( 9098 );
+Settings::flush_cache();
+
+$variation_en = new WC_Product( 9105, 'ROSE-EN', false, 9100 );
+check( 'Produit exclu en français : sa variation anglaise est exclue aussi', true, Eligibility::is_product_excluded( $variation_en ) );
+check( 'Un produit sans rapport n\'est pas exclu', false, Eligibility::is_product_excluded( new WC_Product( 777 ) ) );
+
+$GLOBALS['ret10g_options']['ret10g_excluded_products'] = array( 9100 );
+Settings::flush_cache();
+check( 'Produit exclu saisi en anglais : le français est exclu aussi', true, Eligibility::is_product_excluded( new WC_Product( 9111, '', false, 9098 ) ) );
+
+$GLOBALS['ret10g_test_filters'] = array();
+unset( $GLOBALS['ret10g_options']['ret10g_excluded_products'] );
+Settings::flush_cache();
 
 // --- Aperçu des e-mails ---------------------------------------------------.
 //

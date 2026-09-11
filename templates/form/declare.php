@@ -41,7 +41,7 @@ $created = $order->get_date_created();
 		</div>
 	<?php endif; ?>
 
-	<section class="ret10g__section ret10g__contract">
+	<div class="ret10g__section ret10g__contract">
 		<h2 class="ret10g__title"><?php esc_html_e( 'Contrat concerné', '10gital-retractation' ); ?></h2>
 		<dl class="ret10g__summary">
 			<div>
@@ -61,7 +61,7 @@ $created = $order->get_date_created();
 				<dd><?php echo esc_html( $deadline ); ?></dd>
 			</div>
 		</dl>
-	</section>
+	</div>
 
 	<form method="post" class="ret10g__form ret10g__form--declare"
 		data-ret10g-empty-message="<?php esc_attr_e( 'Merci de sélectionner au moins un article sur lequel porte votre rétractation.', '10gital-retractation' ); ?>">
@@ -70,7 +70,7 @@ $created = $order->get_date_created();
 		<input type="hidden" name="order_id" value="<?php echo esc_attr( (string) $order->get_id() ); ?>">
 		<input type="hidden" name="order_token" value="<?php echo esc_attr( $token ); ?>">
 
-		<section class="ret10g__section">
+		<div class="ret10g__section">
 			<h2 class="ret10g__title"><?php esc_html_e( 'Articles sur lesquels porte votre rétractation', '10gital-retractation' ); ?></h2>
 
 			<p class="ret10g__actions ret10g__actions--inline">
@@ -129,9 +129,9 @@ $created = $order->get_date_created();
 					</li>
 				<?php endforeach; ?>
 			</ul>
-		</section>
+		</div>
 
-		<section class="ret10g__section">
+		<div class="ret10g__section">
 			<h2 class="ret10g__title"><?php esc_html_e( 'Vos coordonnées', '10gital-retractation' ); ?></h2>
 
 			<div class="ret10g__grid">
@@ -162,9 +162,9 @@ $created = $order->get_date_created();
 					</small>
 				</p>
 			<?php endif; ?>
-		</section>
+		</div>
 
-		<section class="ret10g__section ret10g__section--confirm">
+		<div class="ret10g__section ret10g__section--confirm">
 			<p class="ret10g__field ret10g__field--checkbox">
 				<label for="ret10g-confirm">
 					<input type="checkbox" id="ret10g-confirm" name="confirm" value="1" required>
@@ -183,7 +183,7 @@ $created = $order->get_date_created();
 			<p class="ret10g__help">
 				<?php esc_html_e( 'Un accusé de réception horodaté vous sera envoyé immédiatement à l\'adresse indiquée ci-dessus.', '10gital-retractation' ); ?>
 			</p>
-		</section>
+		</div>
 	</form>
 
 	<?php if ( '' !== trim( $notice ) ) : ?>

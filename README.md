@@ -99,7 +99,14 @@ existe, mais reste déconseillé.
 [retractation]                     Formulaire complet (page dédiée)
 [bouton_retractation]              Bouton vers la page
 [bouton_retractation libelle="…"]  Bouton avec un libellé spécifique
+[lien_retractation]                Simple lien texte (pied de page, menu du thème)
+[lien_retractation libelle="…"]    Lien texte avec un libellé spécifique
 ```
+
+Le lien automatique en pied de page s'ajoute après le pied de page du thème,
+sans habillage. Sur un site construit avec Oxygen, Bricks ou Elementor, il est
+plus propre de décocher « Lien permanent en pied de page » et de placer
+`[lien_retractation]` dans le gabarit de pied de page.
 
 ### Bloc
 
@@ -134,6 +141,7 @@ en conservant le chemin relatif. Exemple : `templates/form/declare.php` devient
 | `ret10g_should_show_button` | bool | Affichage du bouton |
 | `ret10g_statement_content` | string | Contenu de la déclaration |
 | `ret10g_locate_template` | string | Chemin d'un gabarit |
+| `ret10g_order_language` | string | Langue d'une commande (liens des e-mails, site multilingue) |
 
 Exemple — brancher le délai sur une vraie date de livraison :
 
@@ -144,6 +152,25 @@ add_filter( 'ret10g_period_start_timestamp', function ( $start, $order ) {
 	return $delivered ? strtotime( $delivered ) : $start;
 }, 10, 2 );
 ```
+
+## Sites multilingues (WPML, Polylang)
+
+Le plugin passe par l'API publique de WPML (filtres `wpml_*`), que Polylang
+implémente aussi. Sans extension multilingue, rien ne change.
+
+- **Une page par langue.** À l'activation, la page est créée dans la langue par
+  défaut du site, puis traduite dans chaque langue active. Sur un site déjà
+  installé, **WooCommerce → Rétractation — réglages** signale les langues
+  manquantes et propose « Créer les traductions manquantes ».
+- **Liens dans la bonne langue.** Bouton, lien de pied de page et redirection
+  suivent la langue du visiteur ; les liens des e-mails suivent la langue de la
+  commande.
+- **Textes des réglages.** Laissés sur leur valeur d'origine, l'introduction,
+  la mention légale et les libellés sont traduits par le catalogue du plugin.
+  Un texte personnalisé se traduit dans WPML → Traduction de chaînes, ou dans
+  Polylang → Traductions (déclaré dans `wpml-config.xml`).
+- **Exclusions.** Un produit ou une catégorie exclu l'est aussi dans ses
+  traductions : les identifiants peuvent être saisis dans n'importe quelle langue.
 
 ## Traductions
 

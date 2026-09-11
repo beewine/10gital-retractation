@@ -38,14 +38,22 @@ $GLOBALS['ret10g_options'] = array(
 
 // --- Fonctions WordPress utilisées par le code testé ------------------------.
 
-function __( $text, $domain = null ) { return $text; }
+/** Catalogue de traduction simulé : texte source => traduction. */
+$GLOBALS['ret10g_translations'] = array();
+
+/** Filtres simulés : nom du filtre => fonction de rappel. */
+$GLOBALS['ret10g_test_filters'] = array();
+
+function __( $text, $domain = null ) { return $GLOBALS['ret10g_translations'][ $text ] ?? $text; }
 function _x( $text, $context, $domain = null ) { return $text; }
 function _n( $single, $plural, $number, $domain = null ) { return $number > 1 ? $plural : $single; }
 function _n_noop( $single, $plural, $domain = null ) { return array( $single, $plural ); }
 function esc_html__( $text, $domain = null ) { return $text; }
 function esc_html( $text ) { return htmlspecialchars( (string) $text, ENT_QUOTES ); }
 function esc_attr( $text ) { return htmlspecialchars( (string) $text, ENT_QUOTES ); }
-function apply_filters( $hook, $value, ...$args ) { return $value; }
+function apply_filters( $hook, $value, ...$args ) {
+	return isset( $GLOBALS['ret10g_test_filters'][ $hook ] ) ? $GLOBALS['ret10g_test_filters'][ $hook ]( $value, ...$args ) : $value;
+}
 function do_action( ...$args ) {}
 function add_action( ...$args ) {}
 function add_filter( ...$args ) {}
@@ -96,9 +104,9 @@ class WP_Error {
 }
 
 class WC_Product {
-	public function __construct( private int $id, private string $sku = '', private bool $virtual = false ) {}
+	public function __construct( private int $id, private string $sku = '', private bool $virtual = false, private int $parent = 0 ) {}
 	public function get_id() { return $this->id; }
-	public function get_parent_id() { return 0; }
+	public function get_parent_id() { return $this->parent; }
 	public function get_sku() { return $this->sku; }
 	public function is_virtual() { return $this->virtual; }
 	public function is_downloadable() { return $this->virtual; }

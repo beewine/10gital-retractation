@@ -8,6 +8,7 @@
 namespace Dixgital\Retractation\Admin;
 
 use Dixgital\Retractation\Core\Install;
+use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Settings;
 
 defined( 'ABSPATH' ) || exit;
@@ -106,6 +107,7 @@ class SettingsPage {
 		$schema   = Settings::schema();
 		$sections = Settings::sections();
 		$page_id  = (int) Settings::get( 'page_id' );
+		$missing  = Multilingual::missing_translations( $page_id );
 		?>
 		<div class="wrap ret10g-admin ret10g-admin--settings">
 			<h1><?php esc_html_e( 'Rétractation — réglages', '10gital-retractation' ); ?></h1>
@@ -114,6 +116,23 @@ class SettingsPage {
 				<div class="notice notice-error">
 					<p>
 						<?php esc_html_e( 'Aucune page de rétractation n\'est configurée. Créez une page contenant le code court [retractation], puis sélectionnez-la ci-dessous.', '10gital-retractation' ); ?>
+					</p>
+				</div>
+			<?php elseif ( $missing ) : ?>
+				<div class="notice notice-warning">
+					<p>
+						<?php
+						printf(
+							/* translators: %s : codes des langues, par ex. « fr, de ». */
+							esc_html__( 'La page de rétractation n\'existe pas encore dans toutes les langues du site. Langues manquantes : %s. Les visiteurs de ces langues sont renvoyés vers une autre version de la page.', '10gital-retractation' ),
+							esc_html( implode( ', ', array_keys( $missing ) ) )
+						);
+						?>
+					</p>
+					<p>
+						<a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'ret10g_create_page', 1 ), 'ret10g_create_page' ) ); ?>">
+							<?php esc_html_e( 'Créer les traductions manquantes', '10gital-retractation' ); ?>
+						</a>
 					</p>
 				</div>
 			<?php endif; ?>
@@ -167,6 +186,7 @@ class SettingsPage {
 				<ul>
 					<li><code>[retractation]</code> — <?php esc_html_e( 'formulaire complet, à placer sur la page dédiée.', '10gital-retractation' ); ?></li>
 					<li><code>[bouton_retractation]</code> — <?php esc_html_e( 'bouton renvoyant vers cette page, à placer où vous le souhaitez.', '10gital-retractation' ); ?></li>
+					<li><code>[lien_retractation]</code> — <?php esc_html_e( 'simple lien texte vers cette page, pour le pied de page ou un menu de votre thème. Pensez alors à décocher le lien automatique en pied de page.', '10gital-retractation' ); ?></li>
 					<li><?php esc_html_e( 'Bloc « Bouton de rétractation » disponible dans l\'éditeur.', '10gital-retractation' ); ?></li>
 				</ul>
 			</div>
@@ -183,7 +203,7 @@ class SettingsPage {
 	 */
 	private function render_field( $key, array $field ) {
 		$name  = Settings::PREFIX . $key;
-		$value = Settings::get( $key );
+		$value = Settings::raw( $key );
 
 		switch ( $field['type'] ) {
 			case 'checkbox':

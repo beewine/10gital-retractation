@@ -2,19 +2,18 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.0.2\n"
+"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-03T00:00:00+00:00\n"
+"POT-Creation-Date: 2026-09-11T00:00:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: xgettext\n"
 "X-Domain: 10gital-retractation\n"
-
 
 #: 10gital-retractation.php:57
 msgid "10gital Rétractation nécessite WooCommerce actif pour fonctionner."
@@ -72,7 +71,7 @@ msgid "Dans les délais"
 msgstr ""
 
 #: includes/Admin/CsvExport.php:55 includes/Admin/ListTable.php:58
-#: includes/Settings.php:250 templates/admin/detail.php:86
+#: includes/Settings.php:258 templates/admin/detail.php:86
 msgid "Traitement"
 msgstr ""
 
@@ -117,7 +116,7 @@ msgstr ""
 msgid "Déclaration de rétractation %1$s : %2$s."
 msgstr ""
 
-#: includes/Admin/DeclarationsPage.php:241 includes/Admin/SettingsPage.php:103
+#: includes/Admin/DeclarationsPage.php:241 includes/Admin/SettingsPage.php:104
 msgid "Vous n'avez pas les droits nécessaires pour accéder à cette page."
 msgstr ""
 
@@ -125,7 +124,7 @@ msgstr ""
 msgid "Exporter en CSV"
 msgstr ""
 
-#: includes/Admin/DeclarationsPage.php:287 includes/Admin/SettingsPage.php:69
+#: includes/Admin/DeclarationsPage.php:287 includes/Admin/SettingsPage.php:70
 msgid "Réglages"
 msgstr ""
 
@@ -194,21 +193,34 @@ msgstr[1] ""
 msgid "Aucune déclaration pour cette commande."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:49
+#: includes/Admin/SettingsPage.php:50
 msgid "Réglages de la rétractation"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:50 includes/Admin/SettingsPage.php:111
+#: includes/Admin/SettingsPage.php:51 includes/Admin/SettingsPage.php:113
 msgid "Rétractation — réglages"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:116
+#: includes/Admin/SettingsPage.php:118
 msgid ""
 "Aucune page de rétractation n'est configurée. Créez une page contenant le "
 "code court [retractation], puis sélectionnez-la ci-dessous."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:123
+#. translators: %s : codes des langues, par ex. « fr, de ».
+#: includes/Admin/SettingsPage.php:127
+#, php-format
+msgid ""
+"La page de rétractation n'existe pas encore dans toutes les langues du site. "
+"Langues manquantes : %s. Les visiteurs de ces langues sont renvoyés vers une "
+"autre version de la page."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:134
+msgid "Créer les traductions manquantes"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:142
 msgid ""
 "Ce plugin met en œuvre la fonction de rétractation exigée à compter du 19 "
 "juin 2026 par l'article 11 bis de la directive (UE) 2011/83 modifiée, "
@@ -216,14 +228,14 @@ msgid ""
 "consommation."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:126
+#: includes/Admin/SettingsPage.php:145
 msgid ""
 "Il ne collecte aucune donnée d'usage, n'affiche aucune publicité et "
 "n'appelle aucun service tiers, à l'exception facultative de la vérification "
 "des mises à jour sur GitHub."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:129
+#: includes/Admin/SettingsPage.php:148
 msgid ""
 "Les déclarations de vos clients sont enregistrées dans la base de votre site "
 "et n'en sortent pas : 10gital, éditeur de l'extension, n'y a aucun accès. "
@@ -232,36 +244,46 @@ msgid ""
 "Confidentialité."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:166
+#: includes/Admin/SettingsPage.php:185
 msgid "Codes courts et bloc"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:168
+#: includes/Admin/SettingsPage.php:187
 msgid "formulaire complet, à placer sur la page dédiée."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:169
+#: includes/Admin/SettingsPage.php:188
 msgid "bouton renvoyant vers cette page, à placer où vous le souhaitez."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:170
+#: includes/Admin/SettingsPage.php:189
+msgid ""
+"simple lien texte vers cette page, pour le pied de page ou un menu de votre "
+"thème. Pensez alors à décocher le lien automatique en pied de page."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:190
 msgid "Bloc « Bouton de rétractation » disponible dans l'éditeur."
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:194
+#: includes/Admin/SettingsPage.php:214
 msgid "Activer"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:245
+#: includes/Admin/SettingsPage.php:265
 msgid "— Aucune —"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:254
+#: includes/Admin/SettingsPage.php:274
 msgid "Voir la page"
 msgstr ""
 
-#: includes/Admin/SettingsPage.php:260
+#: includes/Admin/SettingsPage.php:280
 msgid "Créer la page automatiquement"
+msgstr ""
+
+#: includes/Core/Install.php:304
+msgid "Rétractation"
 msgstr ""
 
 #. translators: %d : nombre de jours.
@@ -366,20 +388,20 @@ msgid ""
 "avec sa date et son heure d'envoi."
 msgstr ""
 
-#: includes/Eligibility.php:220
+#: includes/Eligibility.php:229
 msgid ""
 "Le statut actuel de cette commande ne permet pas de déposer une déclaration "
 "de rétractation en ligne."
 msgstr ""
 
-#: includes/Eligibility.php:224
+#: includes/Eligibility.php:233
 msgid ""
 "Aucun article de cette commande n'ouvre droit à rétractation, ou une "
 "déclaration a déjà été déposée pour la totalité des articles."
 msgstr ""
 
 #. translators: %s : date limite.
-#: includes/Eligibility.php:230
+#: includes/Eligibility.php:239
 #, php-format
 msgid "Le délai de rétractation de cette commande a expiré le %s."
 msgstr ""
@@ -473,246 +495,269 @@ msgid_plural "Rétractation demandée <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/Settings.php:45
+#: includes/Settings.php:53
 msgid "Page de rétractation"
 msgstr ""
 
-#: includes/Settings.php:46
+#: includes/Settings.php:54
 msgid ""
 "Page contenant le code court [retractation]. Créée automatiquement à "
 "l'activation."
 msgstr ""
 
-#: includes/Settings.php:52
+#: includes/Settings.php:60
 msgid "Libellé du bouton"
 msgstr ""
 
-#: includes/Settings.php:53
+#: includes/Settings.php:61
 msgid ""
 "Doit être une formule dénuée d'ambiguïté (art. D.221-5). Formulations "
 "sûres : « Renoncer au contrat ici », « Se rétracter du contrat ici », "
 "« Exercer mon droit de rétractation »."
 msgstr ""
 
-#: includes/Settings.php:59
+#: includes/Settings.php:67
 msgid "Libellé du bouton de confirmation"
 msgstr ""
 
-#: includes/Settings.php:60
+#: includes/Settings.php:68
 msgid ""
 "Second bouton, exigé par l'article 11 bis de la directive (UE) 2011/83 "
 "modifiée."
 msgstr ""
 
-#: includes/Settings.php:66
+#: includes/Settings.php:74
 msgid "Texte d'introduction"
 msgstr ""
 
-#: includes/Settings.php:67
+#: includes/Settings.php:75
 msgid "Affiché en haut de la page de rétractation."
 msgstr ""
 
-#: includes/Settings.php:73
+#: includes/Settings.php:81
 msgid "Mention légale"
 msgstr ""
 
-#: includes/Settings.php:74
+#: includes/Settings.php:82
 msgid "Affichée sous le formulaire. Laisser vide pour ne rien afficher."
 msgstr ""
 
-#: includes/Settings.php:82
+#: includes/Settings.php:90
 msgid "Liste des commandes (Mon compte)"
 msgstr ""
 
-#: includes/Settings.php:83
+#: includes/Settings.php:91
 msgid "Ajoute le bouton en face de chaque commande éligible."
 msgstr ""
 
-#: includes/Settings.php:89
+#: includes/Settings.php:97
 msgid "Détail d'une commande (Mon compte)"
 msgstr ""
 
-#: includes/Settings.php:90
+#: includes/Settings.php:98
 msgid "Ajoute le bouton sous le détail de la commande."
 msgstr ""
 
-#: includes/Settings.php:96
+#: includes/Settings.php:104
 msgid "Lien permanent en pied de page"
 msgstr ""
 
-#: includes/Settings.php:97
+#: includes/Settings.php:105
 msgid ""
 "Recommandé : la fonction doit être « disponible en permanence » et "
 "« aisément accessible » pendant tout le délai de rétractation."
 msgstr ""
 
-#: includes/Settings.php:103
+#: includes/Settings.php:111
 msgid "Lien dans les e-mails WooCommerce"
 msgstr ""
 
-#: includes/Settings.php:104
+#: includes/Settings.php:112
 msgid "Ajoute le lien vers la page de rétractation au bas des e-mails client."
 msgstr ""
 
-#: includes/Settings.php:110
+#: includes/Settings.php:118
 msgid "Couleur de fond du bouton"
 msgstr ""
 
-#: includes/Settings.php:116
+#: includes/Settings.php:124
 msgid "Couleur du texte du bouton"
 msgstr ""
 
-#: includes/Settings.php:122
+#: includes/Settings.php:130
 msgid "Charger la feuille de style du plugin"
 msgstr ""
 
-#: includes/Settings.php:123
+#: includes/Settings.php:131
 msgid "Décocher pour styler entièrement depuis le thème."
 msgstr ""
 
-#: includes/Settings.php:133
+#: includes/Settings.php:141
 msgid "Délai de rétractation (jours)"
 msgstr ""
 
-#: includes/Settings.php:134
+#: includes/Settings.php:142
 msgid "Minimum légal : 14 jours. Vous pouvez offrir davantage."
 msgstr ""
 
-#: includes/Settings.php:144
+#: includes/Settings.php:152
 msgid "Point de départ du délai"
 msgstr ""
 
-#: includes/Settings.php:145
+#: includes/Settings.php:153
 msgid ""
 "Pour les biens, le délai court à compter de la réception. Le statut "
 "« Terminée » en est l'approximation la plus fidèle ; à défaut, la date de "
 "commande est utilisée."
 msgstr ""
 
-#: includes/Settings.php:153
+#: includes/Settings.php:161
 msgid "Jours de tolérance supplémentaires"
 msgstr ""
 
-#: includes/Settings.php:154
+#: includes/Settings.php:162
 msgid ""
 "Marge appliquée après le délai, pour absorber les écarts entre la date de "
 "livraison réelle et le statut de la commande."
 msgstr ""
 
-#: includes/Settings.php:160
+#: includes/Settings.php:168
 msgid "Statuts de commande concernés"
 msgstr ""
 
-#: includes/Settings.php:161
+#: includes/Settings.php:169
 msgid "Seules les commandes dans ces statuts affichent le bouton."
 msgstr ""
 
-#: includes/Settings.php:167
+#: includes/Settings.php:175
 msgid "Refuser les demandes hors délai"
 msgstr ""
 
-#: includes/Settings.php:168
+#: includes/Settings.php:176
 msgid ""
 "Déconseillé. Par défaut, une demande hors délai est enregistrée et signalée "
 "comme telle : c'est vous qui tranchez, et vous conservez la preuve de la "
 "demande."
 msgstr ""
 
-#: includes/Settings.php:174
+#: includes/Settings.php:182
 msgid "Exclure les produits virtuels ou téléchargeables"
 msgstr ""
 
-#: includes/Settings.php:175
+#: includes/Settings.php:183
 msgid ""
 "À n'activer que si le consommateur a expressément renoncé à son droit avant "
 "l'exécution (art. L.221-28 13°)."
 msgstr ""
 
-#: includes/Settings.php:181
+#: includes/Settings.php:189
 msgid "Produits exclus"
 msgstr ""
 
-#: includes/Settings.php:182
+#: includes/Settings.php:190
 msgid "Identifiants de produits séparés par des virgules."
 msgstr ""
 
-#: includes/Settings.php:188
+#: includes/Settings.php:196
 msgid "Catégories exclues"
 msgstr ""
 
-#: includes/Settings.php:189
+#: includes/Settings.php:197
 msgid "Identifiants de catégories de produits séparés par des virgules."
 msgstr ""
 
-#: includes/Settings.php:195
+#: includes/Settings.php:203
 msgid "Proposer un motif (facultatif)"
 msgstr ""
 
-#: includes/Settings.php:196
+#: includes/Settings.php:204
 msgid ""
 "Le motif ne peut jamais être rendu obligatoire : le droit de rétractation "
 "s'exerce sans justification."
 msgstr ""
 
-#: includes/Settings.php:204
+#: includes/Settings.php:212
 msgid "Changer le statut de la commande"
 msgstr ""
 
-#: includes/Settings.php:205
+#: includes/Settings.php:213
 msgid ""
 "Bascule la commande vers « Rétractation demandée » lorsque la déclaration "
 "porte sur la totalité de la commande."
 msgstr ""
 
-#: includes/Settings.php:211
+#: includes/Settings.php:219
 msgid "Destinataire des notifications"
 msgstr ""
 
-#: includes/Settings.php:212
+#: includes/Settings.php:220
 msgid ""
 "Adresses séparées par des virgules. Vide = adresse d'administration du site."
 msgstr ""
 
-#: includes/Settings.php:218
+#: includes/Settings.php:226
 msgid "Conserver l'adresse IP du déclarant"
 msgstr ""
 
-#: includes/Settings.php:219
+#: includes/Settings.php:227
 msgid ""
 "Non nécessaire à la conformité. À n'activer qu'avec une base légale et une "
 "mention dans votre politique de confidentialité."
 msgstr ""
 
-#: includes/Settings.php:227
+#: includes/Settings.php:235
 msgid "Purge automatique après (jours)"
 msgstr ""
 
-#: includes/Settings.php:228
+#: includes/Settings.php:236
 msgid ""
 "0 = aucune purge. Les déclarations servent de preuve : conserver au moins la "
 "durée de prescription applicable."
 msgstr ""
 
-#: includes/Settings.php:234
+#: includes/Settings.php:242
 msgid "Vérifier les mises à jour sur GitHub"
 msgstr ""
 
-#: includes/Settings.php:235
+#: includes/Settings.php:243
 msgid ""
 "Interroge api.github.com deux fois par jour pour connaître la dernière "
 "version publiée. Aucune donnée du site n'est transmise."
 msgstr ""
 
-#: includes/Settings.php:247
+#: includes/Settings.php:255
 msgid "Général"
 msgstr ""
 
-#: includes/Settings.php:248
+#: includes/Settings.php:256
 msgid "Affichage"
 msgstr ""
 
-#: includes/Settings.php:249
+#: includes/Settings.php:257
 msgid "Éligibilité"
+msgstr ""
+
+#: includes/Settings.php:355
+msgid "Exercer mon droit de rétractation"
+msgstr ""
+
+#: includes/Settings.php:358
+msgid "Confirmer la rétractation"
+msgstr ""
+
+#: includes/Settings.php:361
+msgid ""
+"Vous disposez d'un délai de 14 jours pour vous rétracter de votre commande, "
+"sans avoir à motiver votre décision. Renseignez le formulaire ci-dessous : "
+"un accusé de réception horodaté vous sera envoyé immédiatement par e-mail."
+msgstr ""
+
+#: includes/Settings.php:364
+msgid ""
+"Certains biens et services sont exclus du droit de rétractation par "
+"l'article L.221-28 du code de la consommation (biens confectionnés sur "
+"mesure, biens périssables, enregistrements descellés, contenus numériques "
+"fournis avec votre accord préalable, etc.)."
 msgstr ""
 
 #: includes/Submission.php:37

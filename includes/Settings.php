@@ -21,6 +21,14 @@ class Settings {
 	public const PREFIX = 'ret10g_';
 
 	/**
+	 * Réglages affichés aux visiteurs, donc à traduire sur un site multilingue.
+	 *
+	 * Ils sont aussi déclarés dans wpml-config.xml, pour que WPML et Polylang
+	 * proposent de traduire une valeur personnalisée.
+	 */
+	public const TRANSLATABLE = array( 'button_label', 'confirm_label', 'intro_text', 'legal_notice' );
+
+	/**
 	 * Cache mémoire des valeurs déjà lues.
 	 *
 	 * @var array<string,mixed>
@@ -258,7 +266,9 @@ class Settings {
 	 * @return mixed
 	 */
 	public static function get( $key ) {
-		if ( array_key_exists( $key, self::$cache ) ) {
+		$translatable = in_array( $key, self::TRANSLATABLE, true );
+
+		if ( ! $translatable && array_key_exists( $key, self::$cache ) ) {
 			return self::$cache[ $key ];
 		}
 
@@ -268,8 +278,13 @@ class Settings {
 			return null;
 		}
 
-		$value = get_option( self::PREFIX . $key, $schema[ $key ]['default'] );
-		$value = self::cast( $value, $schema[ $key ] );
+		$value = self::raw( $key );
+
+		// Texte resté sur sa valeur d'origine : on sert sa traduction gettext,
+		// pour que le site anglais n'affiche pas le texte français par défaut.
+		if ( $translatable && self::is_default_text( $value, $schema[ $key ]['default'] ) ) {
+			$value = self::translated_default( $key );
+		}
 
 		/**
 		 * Filtre la valeur d'un réglage.
@@ -279,9 +294,79 @@ class Settings {
 		 */
 		$value = apply_filters( 'ret10g_setting', $value, $key );
 
-		self::$cache[ $key ] = $value;
+		// Les textes traduisibles ne sont pas mis en cache : la langue peut
+		// changer en cours de requête (e-mail envoyé dans la langue du client).
+		if ( ! $translatable ) {
+			self::$cache[ $key ] = $value;
+		}
 
 		return $value;
+	}
+
+	/**
+	 * Valeur enregistrée, sans traduction ni filtre.
+	 *
+	 * C'est elle que l'écran de réglages affiche et réenregistre.
+	 *
+	 * @param string $key Clé sans préfixe.
+	 * @return mixed
+	 */
+	public static function raw( $key ) {
+		$schema = self::schema();
+
+		if ( ! isset( $schema[ $key ] ) ) {
+			return null;
+		}
+
+		return self::cast( get_option( self::PREFIX . $key, $schema[ $key ]['default'] ), $schema[ $key ] );
+	}
+
+	/**
+	 * Un texte enregistré est-il resté sur sa valeur d'origine ?
+	 *
+	 * La comparaison ignore les différences d'espacement qu'un passage par le
+	 * formulaire de réglages peut introduire (retours à la ligne, espaces).
+	 *
+	 * @param mixed  $value   Valeur enregistrée.
+	 * @param string $default Valeur par défaut du schéma.
+	 * @return bool
+	 */
+	private static function is_default_text( $value, $default ) {
+		$normalize = static function ( $text ) {
+			return trim( (string) preg_replace( '/\s+/u', ' ', (string) $text ) );
+		};
+
+		return is_string( $value ) && $normalize( $value ) === $normalize( $default );
+	}
+
+	/**
+	 * Valeur par défaut d'un texte, traduite dans la langue courante.
+	 *
+	 * Les chaînes sont répétées ici en toutes lettres pour que les outils
+	 * d'extraction gettext les trouvent ; elles doivent rester identiques aux
+	 * valeurs `default` du schéma.
+	 *
+	 * @param string $key Clé sans préfixe.
+	 * @return string
+	 */
+	public static function translated_default( $key ) {
+		switch ( $key ) {
+			case 'button_label':
+				return __( 'Exercer mon droit de rétractation', '10gital-retractation' );
+
+			case 'confirm_label':
+				return __( 'Confirmer la rétractation', '10gital-retractation' );
+
+			case 'intro_text':
+				return __( "Vous disposez d'un délai de 14 jours pour vous rétracter de votre commande, sans avoir à motiver votre décision. Renseignez le formulaire ci-dessous : un accusé de réception horodaté vous sera envoyé immédiatement par e-mail.", '10gital-retractation' );
+
+			case 'legal_notice':
+				return __( "Certains biens et services sont exclus du droit de rétractation par l'article L.221-28 du code de la consommation (biens confectionnés sur mesure, biens périssables, enregistrements descellés, contenus numériques fournis avec votre accord préalable, etc.).", '10gital-retractation' );
+		}
+
+		$schema = self::schema();
+
+		return isset( $schema[ $key ] ) ? (string) $schema[ $key ]['default'] : '';
 	}
 
 	/**
@@ -445,13 +530,28 @@ class Settings {
 	}
 
 	/**
+	 * Page de rétractation dans une langue donnée.
+	 *
+	 * Sur un site multilingue, le réglage ne mémorise qu'une page : on renvoie
+	 * sa traduction dans la langue demandée, ou la page elle-même si elle n'est
+	 * pas encore traduite.
+	 *
+	 * @param string|null $lang Code langue ; null = langue courante.
+	 * @return int
+	 */
+	public static function page_id( $lang = null ) {
+		return Multilingual::translate_id( (int) self::get( 'page_id' ), 'page', $lang );
+	}
+
+	/**
 	 * URL publique de la page de rétractation.
 	 *
 	 * @param \WC_Order|null $order Commande à pré-sélectionner.
+	 * @param string|null    $lang  Code langue ; null = langue courante.
 	 * @return string
 	 */
-	public static function page_url( $order = null ) {
-		$page_id = (int) self::get( 'page_id' );
+	public static function page_url( $order = null, $lang = null ) {
+		$page_id = self::page_id( $lang );
 		$url     = $page_id ? get_permalink( $page_id ) : home_url( '/' );
 
 		if ( ! $url ) {

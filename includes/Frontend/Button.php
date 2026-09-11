@@ -12,6 +12,7 @@
 namespace Dixgital\Retractation\Frontend;
 
 use Dixgital\Retractation\Eligibility;
+use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Settings;
 use Dixgital\Retractation\Template;
 
@@ -29,6 +30,7 @@ class Button {
 	 */
 	public function register() {
 		add_shortcode( 'bouton_retractation', array( $this, 'shortcode' ) );
+		add_shortcode( 'lien_retractation', array( $this, 'link_shortcode' ) );
 
 		if ( ! Settings::has_page() ) {
 			return;
@@ -80,6 +82,33 @@ class Button {
 	}
 
 	/**
+	 * Code court `[lien_retractation]` : simple lien texte, sans habillage.
+	 *
+	 * Destiné aux pieds de page et menus des thèmes et constructeurs (Oxygen,
+	 * Bricks, Elementor…), où un bouton serait hors de propos.
+	 *
+	 * @param array $atts Attributs : libelle, class.
+	 * @return string
+	 */
+	public function link_shortcode( $atts ) {
+		$atts = shortcode_atts(
+			array(
+				'libelle' => '',
+				'class'   => '',
+			),
+			(array) $atts,
+			'lien_retractation'
+		);
+
+		return sprintf(
+			'<a class="%1$s" href="%2$s">%3$s</a>',
+			esc_attr( trim( 'ret10g-link ' . $atts['class'] ) ),
+			esc_url( Settings::page_url() ),
+			esc_html( $atts['libelle'] ? (string) $atts['libelle'] : (string) Settings::get( 'button_label' ) )
+		);
+	}
+
+	/**
 	 * Ajoute l'action dans la liste des commandes de l'espace client.
 	 *
 	 * @param array     $actions Actions existantes.
@@ -123,7 +152,7 @@ class Button {
 			return;
 		}
 
-		$page_id = (int) Settings::get( 'page_id' );
+		$page_id = Settings::page_id();
 
 		if ( $page_id && is_page( $page_id ) ) {
 			return;
@@ -153,7 +182,10 @@ class Button {
 			return;
 		}
 
-		$url   = Settings::page_url( $order );
+		// Un e-mail peut partir depuis l'administration, dans une autre langue
+		// que celle de la commande : le lien suit la langue du client.
+		$lang  = Multilingual::order_language( $order );
+		$url   = Settings::page_url( $order, $lang ? $lang : null );
 		$label = (string) Settings::get( 'button_label' );
 
 		if ( $plain_text ) {

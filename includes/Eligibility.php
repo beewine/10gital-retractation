@@ -117,7 +117,13 @@ class Eligibility {
 		$product_id = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
 		$excluded   = false;
 
-		if ( in_array( $product_id, array_map( 'intval', (array) Settings::get( 'excluded_products' ) ), true ) ) {
+		// Sur un site multilingue, les identifiants saisis dans les réglages et
+		// ceux de la commande peuvent appartenir à deux langues différentes :
+		// on compare donc aussi leurs équivalents dans la langue par défaut.
+		$product_ids  = Multilingual::with_originals( array( $product_id ), 'product' );
+		$excluded_ids = Multilingual::with_originals( array_map( 'intval', (array) Settings::get( 'excluded_products' ) ), 'product' );
+
+		if ( array_intersect( $product_ids, $excluded_ids ) ) {
 			$excluded = true;
 		}
 
@@ -130,7 +136,10 @@ class Eligibility {
 		if ( ! $excluded && $categories ) {
 			$terms = wp_get_post_terms( $product_id, 'product_cat', array( 'fields' => 'ids' ) );
 
-			if ( ! is_wp_error( $terms ) && array_intersect( array_map( 'intval', $terms ), array_map( 'intval', $categories ) ) ) {
+			if ( ! is_wp_error( $terms ) && array_intersect(
+				Multilingual::with_originals( array_map( 'intval', $terms ), 'product_cat' ),
+				Multilingual::with_originals( array_map( 'intval', $categories ), 'product_cat' )
+			) ) {
 				$excluded = true;
 			}
 		}

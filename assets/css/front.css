@@ -4,28 +4,44 @@
 	--ret10g-radius: 8px;
 	--ret10g-border: #d8dde3;
 	--ret10g-muted: #5b6570;
+	box-sizing: border-box;
 	max-width: 46rem;
 	margin-inline: auto;
+	padding: 2.5rem 1.25rem;
 }
 
-.ret10g__section {
+.ret10g *,
+.ret10g *::before,
+.ret10g *::after {
+	box-sizing: inherit;
+}
+
+/*
+ * Blocs du formulaire. Certains thèmes stylent toutes les balises <section>
+ * (plein écran, flex centré…) : les gabarits utilisent désormais des <div>,
+ * et cette règle neutralise les gabarits surchargés qui en contiendraient encore.
+ */
+.ret10g .ret10g__section {
+	display: block;
+	min-height: 0;
+	height: auto;
 	margin-block: 2rem;
 	padding-block-start: 1.5rem;
 	border-block-start: 1px solid var(--ret10g-border);
 }
 
-.ret10g__section:first-of-type {
+.ret10g .ret10g__section:first-of-type {
 	border-block-start: 0;
 	padding-block-start: 0;
 }
 
-.ret10g__title {
+.ret10g .ret10g__title {
 	margin: 0 0 .75rem;
 	font-size: 1.15rem;
 	line-height: 1.3;
 }
 
-.ret10g__title--small {
+.ret10g .ret10g__title--small {
 	font-size: 1rem;
 }
 
@@ -46,9 +62,9 @@
 	font-weight: 600;
 }
 
-.ret10g__field input[type="text"],
-.ret10g__field input[type="email"],
-.ret10g__field textarea {
+.ret10g .ret10g__field input[type="text"],
+.ret10g .ret10g__field input[type="email"],
+.ret10g .ret10g__field textarea {
 	width: 100%;
 	padding: .65rem .75rem;
 	border: 1px solid var(--ret10g-border);
@@ -294,23 +310,4 @@
 .ret10g-footer__link {
 	color: inherit;
 	text-decoration: underline;
-}
-
-@media (prefers-color-scheme: dark) {
-	.ret10g {
-		--ret10g-border: #3a4048;
-		--ret10g-muted: #9aa4b0;
-	}
-
-	.ret10g__field input[type="text"],
-	.ret10g__field input[type="email"],
-	.ret10g__field textarea,
-	.ret10g__item-qty input {
-		background: #1b1f24;
-		color: #e8eaed;
-	}
-
-	.ret10g__statement {
-		background: #1b1f24;
-	}
 }
