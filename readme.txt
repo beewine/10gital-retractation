@@ -86,6 +86,7 @@ Le plugin enregistre, pour chaque déclaration : nom, prénom, adresse e-mail de
 * Correction : sur un site multilingue (WPML, Polylang), le bouton, le lien de pied de page et les e-mails renvoyaient tous vers une seule version de la page de rétractation. Ils pointent désormais vers la page dans la langue du visiteur, ou du client pour les e-mails.
 * Correction : les textes par défaut (introduction, mention légale, libellés des boutons) restaient en français sur les versions étrangères du site. Ils sont traduits ; un texte personnalisé se traduit avec WPML ou Polylang (wpml-config.xml fourni).
 * Correction : la page créée à l'activation prenait la langue affichée dans l'administration. Elle est créée dans la langue par défaut, puis traduite dans chaque langue active ; un bouton des réglages crée les traductions manquantes.
+* Correction : enregistrer les réglages depuis l'administration dans une autre langue que celle de la page de rétractation la remettait à « Aucune ».
 * Correction : les exclusions par produit ou par catégorie s'appliquent aussi aux traductions des produits et des catégories exclus.
 * Correction d'affichage : le formulaire n'utilise plus de balises <section>, que certains thèmes affichent en plein écran ; styles durcis, mode sombre automatique retiré.
 * Ajout : code court [lien_retractation], simple lien texte pour le pied de page ou un menu du thème.

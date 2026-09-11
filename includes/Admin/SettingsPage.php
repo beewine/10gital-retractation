@@ -257,20 +257,38 @@ class SettingsPage {
 				break;
 
 			case 'page':
-				wp_dropdown_pages(
+				// Sur un site multilingue, la liste ne contient que les pages de
+				// la langue affichée dans l'administration : on présélectionne la
+				// traduction de la page enregistrée, et on l'ajoute à la liste si
+				// elle n'y figure pas — sinon, enregistrer les réglages la
+				// remettrait silencieusement à « Aucune ».
+				$selected = Multilingual::translate_id( (int) $value, 'page' );
+				$dropdown = (string) wp_dropdown_pages(
 					array(
 						'name'              => $name,
 						'id'                => $name,
-						'selected'          => (int) $value,
+						'selected'          => $selected,
 						'show_option_none'  => __( '— Aucune —', '10gital-retractation' ),
 						'option_none_value' => '0',
+						'echo'              => 0,
 					)
 				);
 
-				if ( (int) $value ) {
+				if ( $selected && false === strpos( $dropdown, 'value="' . $selected . '"' ) ) {
+					$missing  = sprintf(
+						'<option value="%1$d" selected="selected">%2$s</option>',
+						$selected,
+						esc_html( get_the_title( $selected ) . ' (#' . $selected . ')' )
+					);
+					$dropdown = preg_replace( '/(<select[^>]*>)/', '$1' . $missing, $dropdown, 1 );
+				}
+
+				echo $dropdown; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- balisage produit par wp_dropdown_pages().
+
+				if ( $selected ) {
 					printf(
 						' <a href="%1$s" target="_blank" rel="noopener">%2$s</a>',
-						esc_url( (string) get_permalink( (int) $value ) ),
+						esc_url( (string) get_permalink( $selected ) ),
 						esc_html__( 'Voir la page', '10gital-retractation' )
 					);
 				} else {
