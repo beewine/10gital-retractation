@@ -3,6 +3,29 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/)
 et le versionnage sémantique.
 
+## [1.2.0] — 2026-09-17
+
+Un seul endroit pour décider qui reçoit les demandes de rétractation, et des e-mails qui partent dans la bonne langue.
+
+### Contexte
+
+Sur un site client, le champ « Destinataire des notifications » du plugin était vide. Les demandes partaient donc sur `admin_email`, l'adresse technique de l'agence, et personne chez le marchand ne les recevait — pendant des jours, sans que rien ne le signale. Le réglage était invisible, sans valeur par défaut parlante, et il doublait un mécanisme que WooCommerce fait déjà bien.
+
+### Modifié
+
+- **Un seul endroit pour le destinataire.** L'e-mail de notification était déjà une classe `WC_Email`, mais son champ « Destinataires » avait une valeur par défaut vide et le plugin retombait silencieusement sur son propre réglage, puis sur l'adresse d'administration. WooCommerce fait désormais seul autorité : destinataire, objet, titre, activation et prévisualisation se règlent dans **WooCommerce → Réglages → E-mails**, au milieu des autres. Le champ est prérempli avec l'adresse d'administration du site, jamais vide.
+- **Le réglage maison `ret10g_merchant_email` n'est plus lu.** À la mise à jour, s'il contenait une adresse, elle est recopiée une fois dans le champ WooCommerce — sauf si une adresse y est déjà saisie, auquel cas elle fait foi. L'option reste en base comme trace, et sera supprimée dans une version ultérieure.
+- **L'adresse est visible sans quitter les réglages du plugin.** La section « Traitement » affiche le ou les destinataires lus en direct depuis WooCommerce, l'état de l'e-mail et un lien vers son écran. Tant que les demandes partent sur l'adresse d'administration, une alerte s'affiche en haut de l'écran : c'est de ne pas voir l'adresse qui a créé le trou.
+
+### Corrigé
+
+- **Langue de l'accusé de réception.** `WC_Email::setup_locale()` bascule les e-mails client vers la locale du site : sur un site multilingue, un client anglais recevait son accusé en français. L'accusé part désormais dans la langue de la commande (méta `wpml_language`, filtre `ret10g_order_language`), et la notification interne dans la langue par défaut du site — c'est la boutique qui la lit, pas le client.
+- Objets, titres et textes additionnels des deux e-mails déclarés dans `wpml-config.xml`, comme les réglages visibles du plugin : WPML String Translation les propose à la traduction.
+
+### Ajouté
+
+- Bancs d'essai sur la reprise du destinataire (quatre cas), sur la valeur par défaut du champ et sur la résolution de la langue d'une commande.
+
 ## [1.1.0] — 2026-09-11
 
 Compatibilité multilingue (WPML, Polylang) et robustesse de l'affichage face aux thèmes, à la suite d'un test sur un site WPML français / anglais.

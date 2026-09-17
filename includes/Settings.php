@@ -212,13 +212,6 @@ class Settings {
 				'label'   => __( 'Changer le statut de la commande', '10gital-retractation' ),
 				'desc'    => __( 'Bascule la commande vers « Rétractation demandée » lorsque la déclaration porte sur la totalité de la commande.', '10gital-retractation' ),
 			),
-			'merchant_email'       => array(
-				'section' => 'processing',
-				'type'    => 'text',
-				'default' => '',
-				'label'   => __( 'Destinataire des notifications', '10gital-retractation' ),
-				'desc'    => __( 'Adresses séparées par des virgules. Vide = adresse d\'administration du site.', '10gital-retractation' ),
-			),
 			'store_ip'             => array(
 				'section' => 'processing',
 				'type'    => 'checkbox',
@@ -499,23 +492,6 @@ class Settings {
 		}
 
 		return $statuses;
-	}
-
-	/**
-	 * Adresses destinataires des notifications marchand.
-	 *
-	 * @return string[]
-	 */
-	public static function merchant_recipients() {
-		$raw = (string) self::get( 'merchant_email' );
-
-		if ( '' === trim( $raw ) ) {
-			$raw = (string) get_option( 'admin_email' );
-		}
-
-		$emails = array_filter( array_map( 'trim', explode( ',', $raw ) ), 'is_email' );
-
-		return array_values( $emails );
 	}
 
 	/**

@@ -14,6 +14,7 @@ use Dixgital\Retractation\Core\Install;
 use Dixgital\Retractation\Core\Privacy;
 use Dixgital\Retractation\Core\Updater;
 use Dixgital\Retractation\Emails\Manager as EmailManager;
+use Dixgital\Retractation\Emails\RecipientMigration;
 use Dixgital\Retractation\Frontend\Assets;
 use Dixgital\Retractation\Frontend\Block;
 use Dixgital\Retractation\Frontend\Button;
@@ -64,6 +65,8 @@ class Plugin {
 		}
 
 		$this->booted = true;
+
+		RecipientMigration::run();
 
 		add_action( 'init', array( $this, 'load_textdomain' ), 1 );
 		add_action( 'admin_init', array( Install::class, 'maybe_upgrade' ) );

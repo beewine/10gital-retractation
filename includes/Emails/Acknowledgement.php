@@ -76,8 +76,6 @@ class Acknowledgement extends \WC_Email {
 			return false;
 		}
 
-		$this->setup_locale();
-
 		$this->declaration                     = $declaration;
 		$this->object                          = $declaration;
 		$this->recipient                       = (string) $declaration->get( 'contact_email' );
@@ -89,8 +87,6 @@ class Acknowledgement extends \WC_Email {
 		if ( $this->is_enabled() && $this->get_recipient() ) {
 			$sent = $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
 		}
-
-		$this->restore_locale();
 
 		return (bool) $sent;
 	}

@@ -8,6 +8,7 @@
 namespace Dixgital\Retractation\Emails;
 
 use Dixgital\Retractation\Declaration;
+use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Repository;
 
 defined( 'ABSPATH' ) || exit;
@@ -53,6 +54,10 @@ class Manager {
 	/**
 	 * Envoie les deux e-mails après enregistrement d'une déclaration.
 	 *
+	 * L'accusé part dans la langue de la commande — c'est le consommateur qui
+	 * le lit. La notification interne part dans la langue par défaut du site :
+	 * c'est la boutique qui la lit, pas le client.
+	 *
 	 * @param Declaration $declaration Déclaration.
 	 * @param \WC_Order   $order       Commande.
 	 * @return void
@@ -61,15 +66,29 @@ class Manager {
 		$mailer = WC()->mailer();
 		$emails = $mailer->get_emails();
 
-		if ( isset( $emails[ self::ACK_ID ] ) && $emails[ self::ACK_ID ]->trigger( $declaration ) ) {
-			Repository::update(
-				$declaration->get_id(),
-				array( 'acknowledged_at' => current_time( 'mysql' ) )
+		if ( isset( $emails[ self::ACK_ID ] ) ) {
+			$acknowledged = Locale::run(
+				Multilingual::order_language( $order ),
+				static function () use ( $emails, $declaration ) {
+					return $emails[ self::ACK_ID ]->trigger( $declaration );
+				}
 			);
+
+			if ( $acknowledged ) {
+				Repository::update(
+					$declaration->get_id(),
+					array( 'acknowledged_at' => current_time( 'mysql' ) )
+				);
+			}
 		}
 
 		if ( isset( $emails[ self::MERCHANT_ID ] ) ) {
-			$emails[ self::MERCHANT_ID ]->trigger( $declaration );
+			Locale::run(
+				Multilingual::default_language(),
+				static function () use ( $emails, $declaration ) {
+					return $emails[ self::MERCHANT_ID ]->trigger( $declaration );
+				}
+			);
 		}
 	}
 }

@@ -159,9 +159,36 @@ class WC_Order {
 	public function get_date_created() { return new WC_DateTime_Stub( $this->created ); }
 	public function get_date_completed() { return $this->completed ? new WC_DateTime_Stub( $this->completed ) : null; }
 	public function get_items() { return $this->items; }
+	public array $metas = array();
+	public function get_meta( $key, $single = true ) { return $this->metas[ $key ] ?? ''; }
 	public function get_qty_refunded_for_item( $item_id ) { return 0; }
 	public function add_order_note( $note ) { $this->notes[] = $note; }
 	public function update_status( $status, $note = '' ) { $this->status = $status; $this->notes[] = $note; }
+}
+
+class WC_Email {
+	public $id = '';
+	public $object = null;
+	public $title = '';
+	public $description = '';
+	public $template_html = '';
+	public $template_plain = '';
+	public $template_base = '';
+	public $placeholders = array();
+	public $customer_email = false;
+	public $recipient = '';
+	public $settings = array();
+	public $form_fields = array();
+
+	public function __construct() { $this->init_form_fields(); }
+	public function init_form_fields() { $this->form_fields = array( 'enabled' => array( 'default' => 'yes' ) ); }
+	public function get_blogname() { return get_option( 'blogname' ); }
+	public function is_enabled() { return 'yes' === $this->get_option( 'enabled' ); }
+	public function get_option( $key, $empty_value = null ) {
+		if ( array_key_exists( $key, $this->settings ) ) { return $this->settings[ $key ]; }
+
+		return $this->form_fields[ $key ]['default'] ?? $empty_value;
+	}
 }
 
 class WC_Geolocation {

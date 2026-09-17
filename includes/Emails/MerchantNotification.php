@@ -8,7 +8,6 @@
 namespace Dixgital\Retractation\Emails;
 
 use Dixgital\Retractation\Declaration;
-use Dixgital\Retractation\Settings;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -63,18 +62,42 @@ class MerchantNotification extends \WC_Email {
 	}
 
 	/**
-	 * Destinataires : réglage dédié, à défaut l'adresse d'administration.
+	 * Destinataires, tels que réglés dans WooCommerce.
+	 *
+	 * L'ancien réglage maison a été repris une fois pour toutes dans ce champ
+	 * (voir RecipientMigration) : WooCommerce fait désormais seul autorité.
 	 *
 	 * @return string
 	 */
 	public function get_recipient() {
-		$configured = $this->get_option( 'recipient' );
+		$configured = trim( (string) $this->get_option( 'recipient' ) );
 
-		if ( ! $configured ) {
-			$configured = implode( ',', Settings::merchant_recipients() );
+		if ( '' === $configured ) {
+			$configured = self::default_recipient();
 		}
 
 		return apply_filters( 'woocommerce_email_recipient_' . $this->id, $configured, $this->object, $this );
+	}
+
+	/**
+	 * Adresse utilisée tant que rien n'a été réglé.
+	 *
+	 * @return string
+	 */
+	public static function default_recipient() {
+		return (string) get_option( 'admin_email' );
+	}
+
+	/**
+	 * Les demandes partent-elles encore sur l'adresse par défaut ?
+	 *
+	 * @param string $recipient Destinataires configurés.
+	 * @return bool
+	 */
+	public static function is_default_recipient( $recipient ) {
+		$recipient = trim( (string) $recipient );
+
+		return '' === $recipient || strtolower( $recipient ) === strtolower( self::default_recipient() );
 	}
 
 	/**
@@ -88,8 +111,6 @@ class MerchantNotification extends \WC_Email {
 			return false;
 		}
 
-		$this->setup_locale();
-
 		$this->declaration                    = $declaration;
 		$this->object                         = $declaration;
 		$this->placeholders['{reference}']    = $declaration->get_reference();
@@ -100,8 +121,6 @@ class MerchantNotification extends \WC_Email {
 		if ( $this->is_enabled() && $this->get_recipient() ) {
 			$sent = $this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
 		}
-
-		$this->restore_locale();
 
 		return (bool) $sent;
 	}
@@ -124,14 +143,10 @@ class MerchantNotification extends \WC_Email {
 				$after['recipient'] = array(
 					'title'       => __( 'Destinataires', '10gital-retractation' ),
 					'type'        => 'text',
-					'description' => sprintf(
-						/* translators: %s : adresse par défaut. */
-						__( 'Adresses séparées par des virgules. Par défaut : %s', '10gital-retractation' ),
-						'<code>' . esc_html( implode( ', ', Settings::merchant_recipients() ) ) . '</code>'
-					),
-					'placeholder' => '',
-					'default'     => '',
-					'desc_tip'    => true,
+					'description' => __( 'Adresses séparées par des virgules. C\'est ici, et nulle part ailleurs, que se règle la personne qui reçoit les demandes de rétractation.', '10gital-retractation' ),
+					'placeholder' => self::default_recipient(),
+					'default'     => self::default_recipient(),
+					'desc_tip'    => false,
 				);
 			}
 		}

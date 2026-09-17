@@ -8,6 +8,8 @@
 namespace Dixgital\Retractation\Admin;
 
 use Dixgital\Retractation\Core\Install;
+use Dixgital\Retractation\Emails\Manager as EmailManager;
+use Dixgital\Retractation\Emails\MerchantNotification;
 use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Settings;
 
@@ -108,6 +110,7 @@ class SettingsPage {
 		$sections = Settings::sections();
 		$page_id  = (int) Settings::get( 'page_id' );
 		$missing  = Multilingual::missing_translations( $page_id );
+		$notified = $this->merchant_recipient();
 		?>
 		<div class="wrap ret10g-admin ret10g-admin--settings">
 			<h1><?php esc_html_e( 'Rétractation — réglages', '10gital-retractation' ); ?></h1>
@@ -132,6 +135,25 @@ class SettingsPage {
 					<p>
 						<a class="button" href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'ret10g_create_page', 1 ), 'ret10g_create_page' ) ); ?>">
 							<?php esc_html_e( 'Créer les traductions manquantes', '10gital-retractation' ); ?>
+						</a>
+					</p>
+				</div>
+			<?php endif; ?>
+
+			<?php if ( MerchantNotification::is_default_recipient( $notified ) ) : ?>
+				<div class="notice notice-warning">
+					<p>
+						<?php
+						printf(
+							/* translators: %s : adresse e-mail. */
+							esc_html__( 'Les demandes de rétractation partent actuellement sur %s. Vérifiez que c\'est bien l\'adresse qui doit les recevoir.', '10gital-retractation' ),
+							'<strong>' . esc_html( $notified ) . '</strong>'
+						);
+						?>
+					</p>
+					<p>
+						<a class="button" href="<?php echo esc_url( self::merchant_settings_url() ); ?>">
+							<?php esc_html_e( 'Choisir le destinataire', '10gital-retractation' ); ?>
 						</a>
 					</p>
 				</div>
@@ -174,6 +196,9 @@ class SettingsPage {
 									</td>
 								</tr>
 							<?php endforeach; ?>
+						<?php if ( 'processing' === $section_key ) : ?>
+							<?php $this->render_notification_row( $notified ); ?>
+						<?php endif; ?>
 						</tbody>
 					</table>
 				<?php endforeach; ?>
@@ -192,6 +217,98 @@ class SettingsPage {
 			</div>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Rend la ligne « Notification interne » des réglages.
+	 *
+	 * Le destinataire se règle dans WooCommerce, mais il s'affiche ici : un
+	 * simple lien ne suffirait pas, c'est précisément de ne pas voir l'adresse
+	 * qui a fait partir des demandes de rétractation chez l'agence pendant des
+	 * jours, sans que personne s'en aperçoive.
+	 *
+	 * @param string $recipient Destinataires configurés.
+	 * @return void
+	 */
+	private function render_notification_row( $recipient ) {
+		$email     = $this->merchant_email();
+		$enabled   = $email ? $email->is_enabled() : true;
+		$is_default = MerchantNotification::is_default_recipient( $recipient );
+		?>
+		<tr>
+			<th scope="row"><?php esc_html_e( 'Notification interne', '10gital-retractation' ); ?></th>
+			<td>
+				<p>
+					<?php if ( ! $enabled ) : ?>
+						<strong><?php esc_html_e( 'Désactivée : personne n\'est prévenu des nouvelles demandes.', '10gital-retractation' ); ?></strong>
+					<?php else : ?>
+						<?php
+						printf(
+							/* translators: %s : adresse e-mail. */
+							esc_html__( 'Les demandes de rétractation sont envoyées à %s.', '10gital-retractation' ),
+							'<strong>' . esc_html( $recipient ) . '</strong>'
+						);
+						?>
+					<?php endif; ?>
+				</p>
+				<p class="description">
+					<?php if ( $is_default ) : ?>
+						<?php esc_html_e( 'C\'est l\'adresse d\'administration du site, faute de réglage : vérifiez que c\'est bien elle qui doit recevoir les demandes.', '10gital-retractation' ); ?>
+					<?php else : ?>
+						<?php esc_html_e( 'Destinataire, objet, titre et activation se règlent dans WooCommerce, avec les autres e-mails de la boutique.', '10gital-retractation' ); ?>
+					<?php endif; ?>
+				</p>
+				<p>
+					<a href="<?php echo esc_url( self::merchant_settings_url() ); ?>">
+						<?php esc_html_e( 'Régler cet e-mail dans WooCommerce', '10gital-retractation' ); ?>
+					</a>
+				</p>
+			</td>
+		</tr>
+		<?php
+	}
+
+	/**
+	 * Écran WooCommerce de l'e-mail de notification.
+	 *
+	 * @return string
+	 */
+	public static function merchant_settings_url() {
+		return admin_url( 'admin.php?page=wc-settings&tab=email&section=' . EmailManager::MERCHANT_ID );
+	}
+
+	/**
+	 * Instance de l'e-mail de notification, si WooCommerce est chargé.
+	 *
+	 * @return MerchantNotification|null
+	 */
+	private function merchant_email() {
+		if ( ! function_exists( 'WC' ) || ! WC()->mailer() ) {
+			return null;
+		}
+
+		$emails = WC()->mailer()->get_emails();
+
+		return isset( $emails[ EmailManager::MERCHANT_ID ] ) ? $emails[ EmailManager::MERCHANT_ID ] : null;
+	}
+
+	/**
+	 * Destinataires réellement utilisés, lus en direct depuis WooCommerce.
+	 *
+	 * @return string
+	 */
+	private function merchant_recipient() {
+		$email = $this->merchant_email();
+
+		if ( $email ) {
+			return (string) $email->get_recipient();
+		}
+
+		// WooCommerce absent du contexte : on relit l'option à la main.
+		$settings  = get_option( \Dixgital\Retractation\Emails\RecipientMigration::WC_OPTION, array() );
+		$recipient = is_array( $settings ) && isset( $settings['recipient'] ) ? trim( (string) $settings['recipient'] ) : '';
+
+		return '' === $recipient ? MerchantNotification::default_recipient() : $recipient;
 	}
 
 	/**

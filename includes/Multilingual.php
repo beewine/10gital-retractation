@@ -70,6 +70,18 @@ class Multilingual {
 	}
 
 	/**
+	 * Locale WordPress d'une langue active (« en » => « en_US »).
+	 *
+	 * @param string $lang Code langue.
+	 * @return string Locale, ou chaîne vide si la langue est inconnue.
+	 */
+	public static function locale_for( $lang ) {
+		$languages = self::languages();
+
+		return isset( $languages[ $lang ] ) ? (string) $languages[ $lang ] : '';
+	}
+
+	/**
 	 * Traduction d'un objet dans une langue, ou l'objet lui-même à défaut.
 	 *
 	 * @param int         $id   Identifiant (post, page, produit, terme).

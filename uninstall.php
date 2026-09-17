@@ -37,3 +37,7 @@ $options = $wpdb->get_col(
 foreach ( (array) $options as $option ) {
 	delete_option( $option );
 }
+
+// Réglages WooCommerce des deux e-mails du plugin.
+delete_option( 'woocommerce_ret10g_acknowledgement_settings' );
+delete_option( 'woocommerce_ret10g_merchant_settings' );

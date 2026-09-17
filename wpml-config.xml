@@ -3,11 +3,26 @@
 		Textes des réglages affichés aux visiteurs. WPML (String Translation) et
 		Polylang les proposent à la traduction lorsqu'ils ont été personnalisés ;
 		restés sur leur valeur d'origine, ils sont traduits par le catalogue du plugin.
+
+		Les deux derniers blocs sont les réglages WooCommerce des e-mails du
+		plugin : objet, titre et texte additionnel, comme pour les e-mails
+		natifs de la boutique. L'accusé de réception part dans la langue de la
+		commande, la notification interne dans la langue par défaut du site.
 	-->
 	<admin-texts>
 		<key name="ret10g_button_label" />
 		<key name="ret10g_confirm_label" />
 		<key name="ret10g_intro_text" />
 		<key name="ret10g_legal_notice" />
+		<key name="woocommerce_ret10g_acknowledgement_settings">
+			<key name="subject" />
+			<key name="heading" />
+			<key name="additional_content" />
+		</key>
+		<key name="woocommerce_ret10g_merchant_settings">
+			<key name="subject" />
+			<key name="heading" />
+			<key name="additional_content" />
+		</key>
 	</admin-texts>
 </wpml-config>

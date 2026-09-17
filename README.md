@@ -79,8 +79,24 @@ de WordPress, comme pour un plugin du dépôt officiel.
 ou date de commande), jours de tolérance, statuts concernés, exclusions par produit,
 catégorie ou nature (virtuel/téléchargeable), motif facultatif.
 
-**Traitement** — changement de statut, destinataires des notifications, conservation
-de l'adresse IP (désactivée par défaut), purge automatique, vérification des mises à jour.
+**Traitement** — changement de statut, conservation de l'adresse IP (désactivée par
+défaut), purge automatique, vérification des mises à jour.
+
+### Qui reçoit les demandes
+
+Le destinataire de la notification interne se règle **dans WooCommerce**, avec les
+autres e-mails de la boutique : **WooCommerce → Réglages → E-mails → « Rétractation —
+notification interne »**. On y trouve l'activation, le ou les destinataires, l'objet,
+le titre et la prévisualisation.
+
+Le champ est prérempli avec l'adresse d'administration du site. Tant qu'il n'a pas été
+changé, les réglages du plugin affichent l'adresse réellement utilisée et une alerte :
+une demande de rétractation qui part sur l'adresse technique de l'agence ne se voit pas,
+et c'est exactement ce qu'il faut éviter.
+
+L'ancien réglage `ret10g_merchant_email` n'est plus lu. Sur un site déjà configuré, son
+contenu est repris une fois dans le champ WooCommerce à la mise à jour ; l'option reste
+en base comme trace le temps d'une version.
 
 ### Un choix de conception à connaître
 
@@ -171,6 +187,10 @@ implémente aussi. Sans extension multilingue, rien ne change.
   Polylang → Traductions (déclaré dans `wpml-config.xml`).
 - **Exclusions.** Un produit ou une catégorie exclu l'est aussi dans ses
   traductions : les identifiants peuvent être saisis dans n'importe quelle langue.
+- **Langue des e-mails.** L'accusé de réception part dans la langue de la commande
+  (méta `wpml_language` de WooCommerce Multilingual, filtre `ret10g_order_language`) ;
+  la notification interne part dans la langue par défaut du site. Objets et titres se
+  traduisent dans WPML → Traduction de chaînes, comme ceux des e-mails WooCommerce.
 
 ## Traductions
 

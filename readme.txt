@@ -6,7 +6,7 @@ Tested up to: 6.8
 Requires PHP: 7.4
 WC requires at least: 8.0
 WC tested up to: 10.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,13 @@ Le plugin enregistre, pour chaque déclaration : nom, prénom, adresse e-mail de
 **Vous êtes seul responsable de ce traitement.** 10gital, éditeur de l'extension, n'a aucun accès à ces données et n'en reçoit aucune copie : il n'a donc pas à figurer dans votre politique de confidentialité. Le plugin vous propose en revanche une section prête à adapter dans Réglages → Confidentialité.
 
 == Changelog ==
+
+= 1.2.0 =
+* Le destinataire de la notification interne se règle désormais dans WooCommerce → Réglages → E-mails, comme n'importe quel e-mail de la boutique. Le réglage maison disparaît ; l'adresse déjà saisie est reprise automatiquement à la mise à jour.
+* Correction : l'adresse réellement utilisée est maintenant affichée dans les réglages du plugin, et une alerte s'affiche tant que les demandes partent sur l'adresse d'administration du site.
+* Correction : l'accusé de réception part dans la langue de la commande. Auparavant, WooCommerce basculait les e-mails client vers la langue du site — un client anglais recevait un accusé en français.
+* La notification interne part dans la langue par défaut du site : c'est la boutique qui la lit.
+* Objets et titres des deux e-mails déclarés à la traduction de chaînes WPML.
 
 = 1.1.0 =
 * Correction : sur un site multilingue (WPML, Polylang), le bouton, le lien de pied de page et les e-mails renvoyaient tous vers une seule version de la page de rétractation. Ils pointent désormais vers la page dans la langue du visiteur, ou du client pour les e-mails.

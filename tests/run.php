@@ -9,6 +9,8 @@ require __DIR__ . '/bootstrap.php';
 
 use Dixgital\Retractation\Declaration;
 use Dixgital\Retractation\Eligibility;
+use Dixgital\Retractation\Emails\MerchantNotification;
+use Dixgital\Retractation\Emails\RecipientMigration;
 use Dixgital\Retractation\Multilingual;
 use Dixgital\Retractation\Security;
 use Dixgital\Retractation\Settings;
@@ -287,6 +289,51 @@ check( 'Produit exclu saisi en anglais : le français est exclu aussi', true, El
 $GLOBALS['ret10g_test_filters'] = array();
 unset( $GLOBALS['ret10g_options']['ret10g_excluded_products'] );
 Settings::flush_cache();
+
+// --- Notification interne : reprise de l'ancien réglage ---------------------.
+//
+// Un site déjà configuré ne doit pas perdre son adresse en passant la mise à
+// jour, et une adresse saisie dans WooCommerce ne doit jamais être écrasée.
+
+check( 'WooCommerce déjà réglé : rien à reprendre', null, RecipientMigration::resolve( array( 'recipient' => 'boutique@example.test' ), 'ancien@example.test' ) );
+check( 'Ancienne adresse reprise', 'ancien@example.test', RecipientMigration::resolve( array(), 'ancien@example.test' ) );
+check( 'Champ WooCommerce vide : l\'ancienne adresse est reprise', 'ancien@example.test', RecipientMigration::resolve( array( 'recipient' => '  ' ), 'ancien@example.test' ) );
+check( 'Liste nettoyée et dédoublonnée', 'a@example.test, b@example.test', RecipientMigration::resolve( array(), ' a@example.test , b@example.test, a@example.test ' ) );
+check( 'Rien nulle part : rien à écrire', null, RecipientMigration::resolve( array(), '' ) );
+check( 'Valeur qui n\'est pas une adresse : ignorée', null, RecipientMigration::resolve( array(), 'service client' ) );
+
+$GLOBALS['ret10g_options']['admin_email'] = 'agence@example.test';
+
+$merchant_email = new MerchantNotification();
+
+check( 'Le champ destinataire est préréglé sur l\'adresse d\'administration', 'agence@example.test', $merchant_email->get_option( 'recipient' ) );
+check( 'Adresse par défaut : signalée comme non configurée', true, MerchantNotification::is_default_recipient( 'agence@example.test' ) );
+check( 'Adresse vide : signalée comme non configurée', true, MerchantNotification::is_default_recipient( '' ) );
+check( 'Adresse choisie : considérée comme configurée', false, MerchantNotification::is_default_recipient( 'boutique@example.test' ) );
+
+// --- Langue des e-mails ----------------------------------------------------.
+
+$order_en         = make_order( 1004, time() - 5 * DAY_IN_SECONDS );
+$order_en->metas['wpml_language'] = 'en';
+
+check( 'Langue de la commande lue sur la méta de WooCommerce Multilingual', 'en', Multilingual::order_language( $order_en ) );
+check( 'Commande sans méta : aucune langue imposée', '', Multilingual::order_language( $recent ) );
+
+$GLOBALS['ret10g_test_filters']['ret10g_order_language'] = static function ( $lang, $order ) { return 'de'; };
+check( 'Le filtre ret10g_order_language a le dernier mot', 'de', Multilingual::order_language( $order_en ) );
+unset( $GLOBALS['ret10g_test_filters']['ret10g_order_language'] );
+
+$GLOBALS['ret10g_test_filters']['wpml_active_languages'] = static function ( $value, $args = array() ) {
+	return array(
+		'fr' => array( 'default_locale' => 'fr_FR' ),
+		'en' => array( 'default_locale' => 'en_US' ),
+	);
+};
+
+check( 'Locale d\'une langue active', 'en_US', Multilingual::locale_for( 'en' ) );
+check( 'Langue inconnue : pas de locale', '', Multilingual::locale_for( 'de' ) );
+
+$GLOBALS['ret10g_test_filters'] = array();
 
 // --- Aperçu des e-mails ---------------------------------------------------.
 //

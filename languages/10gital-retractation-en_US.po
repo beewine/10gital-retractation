@@ -3,11 +3,11 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.1.0\n"
+"Project-Id-Version: 10gital Rétractation pour WooCommerce 1.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/beewine/10gital-retractation/"
 "issues\n"
-"POT-Creation-Date: 2026-09-11 10:57+0200\n"
-"PO-Revision-Date: 2026-09-11 00:00+0000\n"
+"POT-Creation-Date: 2026-09-17 13:01+0200\n"
+"PO-Revision-Date: 2026-09-17 00:00+0000\n"
 "Last-Translator: 10gital <contact@10gital.fr>\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -73,7 +73,7 @@ msgid "Dans les délais"
 msgstr "Within the period"
 
 #: includes/Admin/CsvExport.php:55 includes/Admin/ListTable.php:58
-#: includes/Settings.php:258 templates/admin/detail.php:86
+#: includes/Settings.php:251 templates/admin/detail.php:86
 msgid "Traitement"
 msgstr "Handling"
 
@@ -118,7 +118,7 @@ msgstr "Withdrawals"
 msgid "Déclaration de rétractation %1$s : %2$s."
 msgstr "Withdrawal declaration %1$s: %2$s."
 
-#: includes/Admin/DeclarationsPage.php:241 includes/Admin/SettingsPage.php:104
+#: includes/Admin/DeclarationsPage.php:241 includes/Admin/SettingsPage.php:106
 msgid "Vous n'avez pas les droits nécessaires pour accéder à cette page."
 msgstr "You do not have permission to access this page."
 
@@ -126,7 +126,7 @@ msgstr "You do not have permission to access this page."
 msgid "Exporter en CSV"
 msgstr "Export to CSV"
 
-#: includes/Admin/DeclarationsPage.php:287 includes/Admin/SettingsPage.php:70
+#: includes/Admin/DeclarationsPage.php:287 includes/Admin/SettingsPage.php:72
 msgid "Réglages"
 msgstr "Settings"
 
@@ -195,15 +195,15 @@ msgstr[1] "%d items"
 msgid "Aucune déclaration pour cette commande."
 msgstr "No declaration for this order."
 
-#: includes/Admin/SettingsPage.php:50
+#: includes/Admin/SettingsPage.php:52
 msgid "Réglages de la rétractation"
 msgstr "Withdrawal settings"
 
-#: includes/Admin/SettingsPage.php:51 includes/Admin/SettingsPage.php:113
+#: includes/Admin/SettingsPage.php:53 includes/Admin/SettingsPage.php:116
 msgid "Rétractation — réglages"
 msgstr "Withdrawal — settings"
 
-#: includes/Admin/SettingsPage.php:118
+#: includes/Admin/SettingsPage.php:121
 msgid ""
 "Aucune page de rétractation n'est configurée. Créez une page contenant le "
 "code court [retractation], puis sélectionnez-la ci-dessous."
@@ -212,7 +212,7 @@ msgstr ""
 "[retractation] shortcode, then select it below."
 
 #. translators: %s : codes des langues, par ex. « fr, de ».
-#: includes/Admin/SettingsPage.php:127
+#: includes/Admin/SettingsPage.php:130
 #, php-format
 msgid ""
 "La page de rétractation n'existe pas encore dans toutes les langues du site. "
@@ -223,11 +223,25 @@ msgstr ""
 "Missing languages: %s. Visitors in these languages are sent to another "
 "version of the page."
 
-#: includes/Admin/SettingsPage.php:134
+#: includes/Admin/SettingsPage.php:137
 msgid "Créer les traductions manquantes"
 msgstr "Create the missing translations"
 
-#: includes/Admin/SettingsPage.php:142
+#. translators: %s : adresse e-mail.
+#: includes/Admin/SettingsPage.php:149
+#, php-format
+msgid ""
+"Les demandes de rétractation partent actuellement sur %s. Vérifiez que c'est "
+"bien l'adresse qui doit les recevoir."
+msgstr ""
+"Withdrawal requests currently go to %s. Make sure this is the address that "
+"should receive them."
+
+#: includes/Admin/SettingsPage.php:156
+msgid "Choisir le destinataire"
+msgstr "Choose the recipient"
+
+#: includes/Admin/SettingsPage.php:164
 msgid ""
 "Ce plugin met en œuvre la fonction de rétractation exigée à compter du 19 "
 "juin 2026 par l'article 11 bis de la directive (UE) 2011/83 modifiée, "
@@ -238,7 +252,7 @@ msgstr ""
 "Article 11a of Directive (EU) 2011/83 as amended, transposed in France into "
 "Articles L.221-21 and D.221-5 of the Consumer Code."
 
-#: includes/Admin/SettingsPage.php:145
+#: includes/Admin/SettingsPage.php:167
 msgid ""
 "Il ne collecte aucune donnée d'usage, n'affiche aucune publicité et "
 "n'appelle aucun service tiers, à l'exception facultative de la vérification "
@@ -247,7 +261,7 @@ msgstr ""
 "It collects no usage data, displays no advertising and calls no third-party "
 "service, apart from the optional update check on GitHub."
 
-#: includes/Admin/SettingsPage.php:148
+#: includes/Admin/SettingsPage.php:170
 msgid ""
 "Les déclarations de vos clients sont enregistrées dans la base de votre site "
 "et n'en sortent pas : 10gital, éditeur de l'extension, n'y a aucun accès. "
@@ -260,19 +274,19 @@ msgstr ""
 "Completing your privacy policy is therefore yours alone to do, and a "
 "suggested section is waiting for you under Settings → Privacy."
 
-#: includes/Admin/SettingsPage.php:185
+#: includes/Admin/SettingsPage.php:210
 msgid "Codes courts et bloc"
 msgstr "Shortcodes and block"
 
-#: includes/Admin/SettingsPage.php:187
+#: includes/Admin/SettingsPage.php:212
 msgid "formulaire complet, à placer sur la page dédiée."
 msgstr "full form, to be placed on the dedicated page."
 
-#: includes/Admin/SettingsPage.php:188
+#: includes/Admin/SettingsPage.php:213
 msgid "bouton renvoyant vers cette page, à placer où vous le souhaitez."
 msgstr "button linking to that page, to be placed wherever you like."
 
-#: includes/Admin/SettingsPage.php:189
+#: includes/Admin/SettingsPage.php:214
 msgid ""
 "simple lien texte vers cette page, pour le pied de page ou un menu de votre "
 "thème. Pensez alors à décocher le lien automatique en pied de page."
@@ -280,23 +294,57 @@ msgstr ""
 "plain text link to this page, for your theme's footer or a menu. Remember to "
 "untick the automatic footer link if you use it."
 
-#: includes/Admin/SettingsPage.php:190
+#: includes/Admin/SettingsPage.php:215
 msgid "Bloc « Bouton de rétractation » disponible dans l'éditeur."
 msgstr "A “Withdrawal button” block is available in the editor."
 
-#: includes/Admin/SettingsPage.php:214
+#: includes/Admin/SettingsPage.php:239
+msgid "Notification interne"
+msgstr "Internal notification"
+
+#: includes/Admin/SettingsPage.php:243
+msgid "Désactivée : personne n'est prévenu des nouvelles demandes."
+msgstr "Disabled: nobody is told about new requests."
+
+#. translators: %s : adresse e-mail.
+#: includes/Admin/SettingsPage.php:248
+#, php-format
+msgid "Les demandes de rétractation sont envoyées à %s."
+msgstr "Withdrawal requests are sent to %s."
+
+#: includes/Admin/SettingsPage.php:256
+msgid ""
+"C'est l'adresse d'administration du site, faute de réglage : vérifiez que "
+"c'est bien elle qui doit recevoir les demandes."
+msgstr ""
+"This is the site's administration address, for want of a setting: make sure "
+"it is the one that should receive the requests."
+
+#: includes/Admin/SettingsPage.php:258
+msgid ""
+"Destinataire, objet, titre et activation se règlent dans WooCommerce, avec "
+"les autres e-mails de la boutique."
+msgstr ""
+"Recipient, subject, heading and activation are set in WooCommerce, alongside "
+"the other store emails."
+
+#: includes/Admin/SettingsPage.php:263
+msgid "Régler cet e-mail dans WooCommerce"
+msgstr "Set up this email in WooCommerce"
+
+#: includes/Admin/SettingsPage.php:331
 msgid "Activer"
 msgstr "Enable"
 
-#: includes/Admin/SettingsPage.php:265
+#: includes/Admin/SettingsPage.php:388
 msgid "— Aucune —"
 msgstr "— None —"
 
-#: includes/Admin/SettingsPage.php:274
+#: includes/Admin/SettingsPage.php:409
 msgid "Voir la page"
 msgstr "View the page"
 
-#: includes/Admin/SettingsPage.php:280
+#: includes/Admin/SettingsPage.php:415
 msgid "Créer la page automatiquement"
 msgstr "Create the page automatically"
 
@@ -473,33 +521,35 @@ msgstr "Acknowledgement of your withdrawal ({reference})"
 msgid "Votre rétractation a bien été reçue"
 msgstr "Your withdrawal has been received"
 
-#: includes/Emails/MerchantNotification.php:33
+#: includes/Emails/MerchantNotification.php:32
 msgid "Rétractation — notification interne"
 msgstr "Withdrawal — internal notification"
 
-#: includes/Emails/MerchantNotification.php:34
+#: includes/Emails/MerchantNotification.php:33
 msgid ""
 "Prévient la boutique qu'une déclaration de rétractation vient d'être déposée."
 msgstr ""
 "Notifies the shop that a withdrawal declaration has just been submitted."
 
-#: includes/Emails/MerchantNotification.php:53
+#: includes/Emails/MerchantNotification.php:52
 msgid "[{site_title}] Rétractation reçue — commande #{order_number}"
 msgstr "[{site_title}] Withdrawal received — order #{order_number}"
 
-#: includes/Emails/MerchantNotification.php:62
+#: includes/Emails/MerchantNotification.php:61
 msgid "Nouvelle déclaration de rétractation"
 msgstr "New withdrawal declaration"
 
-#: includes/Emails/MerchantNotification.php:125
+#: includes/Emails/MerchantNotification.php:144
 msgid "Destinataires"
 msgstr "Recipients"
 
-#. translators: %s : adresse par défaut.
-#: includes/Emails/MerchantNotification.php:129
-#, php-format
-msgid "Adresses séparées par des virgules. Par défaut : %s"
-msgstr "Comma-separated addresses. Default: %s"
+#: includes/Emails/MerchantNotification.php:146
+msgid ""
+"Adresses séparées par des virgules. C'est ici, et nulle part ailleurs, que "
+"se règle la personne qui reçoit les demandes de rétractation."
+msgstr ""
+"Comma-separated addresses. This is where — and nowhere else — you choose who "
+"receives withdrawal requests."
 
 #: includes/Frontend/Form.php:81
 msgid "Votre session a expiré. Merci de recommencer."
@@ -759,19 +809,10 @@ msgstr ""
 "whole order."
 
 #: includes/Settings.php:219
-msgid "Destinataire des notifications"
-msgstr "Notification recipients"
-
-#: includes/Settings.php:220
-msgid ""
-"Adresses séparées par des virgules. Vide = adresse d'administration du site."
-msgstr "Comma-separated addresses. Empty = the site administration address."
-
-#: includes/Settings.php:226
 msgid "Conserver l'adresse IP du déclarant"
 msgstr "Store the declarant's IP address"
 
-#: includes/Settings.php:227
+#: includes/Settings.php:220
 msgid ""
 "Non nécessaire à la conformité. À n'activer qu'avec une base légale et une "
 "mention dans votre politique de confidentialité."
@@ -779,11 +820,11 @@ msgstr ""
 "Not required for compliance. Only enable with a legal basis and a mention in "
 "your privacy policy."
 
-#: includes/Settings.php:235
+#: includes/Settings.php:228
 msgid "Purge automatique après (jours)"
 msgstr "Automatic purge after (days)"
 
-#: includes/Settings.php:236
+#: includes/Settings.php:229
 msgid ""
 "0 = aucune purge. Les déclarations servent de preuve : conserver au moins la "
 "durée de prescription applicable."
@@ -791,11 +832,11 @@ msgstr ""
 "0 = no purge. Declarations serve as evidence: keep them at least for the "
 "applicable limitation period."
 
-#: includes/Settings.php:242
+#: includes/Settings.php:235
 msgid "Vérifier les mises à jour sur GitHub"
 msgstr "Check for updates on GitHub"
 
-#: includes/Settings.php:243
+#: includes/Settings.php:236
 msgid ""
 "Interroge api.github.com deux fois par jour pour connaître la dernière "
 "version publiée. Aucune donnée du site n'est transmise."
@@ -803,27 +844,27 @@ msgstr ""
 "Queries api.github.com twice a day to learn the latest published version. No "
 "site data is transmitted."
 
-#: includes/Settings.php:255
+#: includes/Settings.php:248
 msgid "Général"
 msgstr "General"
 
-#: includes/Settings.php:256
+#: includes/Settings.php:249
 msgid "Affichage"
 msgstr "Display"
 
-#: includes/Settings.php:257
+#: includes/Settings.php:250
 msgid "Éligibilité"
 msgstr "Eligibility"
 
-#: includes/Settings.php:355
+#: includes/Settings.php:348
 msgid "Exercer mon droit de rétractation"
 msgstr "Exercise my right of withdrawal"
 
-#: includes/Settings.php:358
+#: includes/Settings.php:351
 msgid "Confirmer la rétractation"
 msgstr "Confirm the withdrawal"
 
-#: includes/Settings.php:361
+#: includes/Settings.php:354
 msgid ""
 "Vous disposez d'un délai de 14 jours pour vous rétracter de votre commande, "
 "sans avoir à motiver votre décision. Renseignez le formulaire ci-dessous : "
@@ -833,7 +874,7 @@ msgstr ""
 "reason. Fill in the form below: a time-stamped acknowledgement of receipt "
 "will be sent to you by email straight away."
 
-#: includes/Settings.php:364
+#: includes/Settings.php:357
 msgid ""
 "Certains biens et services sont exclus du droit de rétractation par "
 "l'article L.221-28 du code de la consommation (biens confectionnés sur "
@@ -1274,3 +1315,15 @@ msgstr "Email address on the order"
 #: templates/form/lookup.php:110
 msgid "Continuer"
 msgstr "Continue"
+
+#, php-format
+#~ msgid "Adresses séparées par des virgules. Par défaut : %s"
+#~ msgstr "Comma-separated addresses. Default: %s"
+
+#~ msgid "Destinataire des notifications"
+#~ msgstr "Notification recipients"
+
+#~ msgid ""
+#~ "Adresses séparées par des virgules. Vide = adresse d'administration du "
+#~ "site."
+#~ msgstr "Comma-separated addresses. Empty = the site administration address."
